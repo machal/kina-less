@@ -1,0 +1,277 @@
+// Search.less
+// Modul vyhledavani ve filmech
+// ------------------------------
+
+// Vyhledavaci policko
+
+.search_label,
+.search_submit   {
+  display: none;
+}
+
+
+.search_input_box {
+  position: relative;
+  width: 180px;
+  border: 0;
+  margin: 0;
+  padding: 7px 32px 7px 12px;
+  background-color: @searchBackground;
+  .border-radius(0 0 10px 10px);
+
+}
+
+.search_input {
+  width: 170px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  line-height: @baseLineHeight;
+  height: @baseLineHeight;
+  overflow: visible;
+  text-align: left;
+  background: transparent;
+  color: @searchColor;
+}
+
+.search_input::-webkit-input-placeholder {
+  color: @searchColor;
+}
+
+.search_input:-moz-placeholder {
+  color: @searchColor;
+}
+
+.search_input:-ms-input-placeholder {
+  color: @searchColor;
+}
+
+.no-backgroundsize .search_input {
+  padding-right: 12px;
+}
+
+/* Focus na vyhledavacim policku */
+
+.search_input:focus {
+  color: @searchColor;
+}
+
+/* Vyhledavaci policko indikuje vyhledavani */
+
+#search.s_loading .loading  {
+  top: 5px;
+  left: 190px;
+  color: #000;
+  display: inline-block;
+}
+
+.no-backgroundsize #search.s_loading .loading {
+  left: 185px;
+}
+
+#search.s_loading.s_results .loading  {
+  background-image: url('../img/loading_black.png');
+}
+
+#search.s_loading .search_input_box:before  {
+  background-image: none;
+}
+
+/* Zobrazujeme vysledky vyhledavani */
+
+#search.s_results .search_input_box {
+  z-index: 50;
+  position: absolute;
+  color: rgb(128, 128, 128);
+  background-color: rgb(255, 255, 255);
+
+  .border-radius(0);
+}
+
+#search.s_results .search_input_box:before {
+  background-position: 0 -32px;
+}
+
+#search.s_results .search_input {
+  color: @searchColorInverse;
+}
+
+.search_results {
+  display: none;
+  z-index: 40;
+  position: absolute;
+  top: 33px;
+  left: 50%;
+  margin-left: -182px;
+  background: @searchResultsBackground;
+  .border-radius(0 0 10px 10px);
+  .box-shadow(0px 1px 10px rgba(0, 0, 0, 0.5));
+}
+
+#search.s_results .search_results {
+  display: block;
+}
+
+.search_results ul,
+.search_results li   {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.search_results .item {
+  display: block;
+  width: 380px; /* 424 */
+  height: 76px;
+  padding: 10px 22px 11px;
+  border-bottom: 2px solid @searchResultsBorder;
+}
+
+.search_results ul > li:last-child .item {
+  border-bottom: 0;
+  padding-bottom: @baseLineHeight;
+  -webkit-border-radius: 0 0 10px 10px; /* Saf3-4, iOS 1-3.2, Android <e;1.6 */
+  -moz-border-radius: 0 0 10px 10px; /* FF1-3.6 */
+  border-radius: 0 0 10px 10px; /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+}
+
+.search_results .item:hover,
+.search_results .item:focus,
+.search_results .item:active {
+  background-color: @searchResultsHover;
+}
+
+.search_results .item > .image {
+  float: left;
+  clear: left;
+  width: 100px;
+  height: 76px;
+}
+
+.search_results .item .image_inside {
+  margin-top: 17px;
+  width: 92px;
+  height: 42px;
+  overflow: hidden;
+  .better-image-rendering();
+}
+
+.search_results .item .subst_image {
+  width: 184px;
+  height: 84px;
+  background: @substImageBgInvertedFallback;
+  background: @substImageBgInverted;
+}
+
+/* Obrazek v puvodni velikosti
+   + vertikalni centrovani pomoci ghost techniky z http://css-tricks.com/centering-in-the-unknown/ */
+
+.search_results .item > .image.original_size img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 92px;
+  max-width: 92px;
+  height: auto;
+}
+
+
+/* Text */
+
+.search_results .item > .text {
+  margin-left: 117px;
+  width: 263px;
+  height: 76px;
+  color: @searchResultsColor;
+}
+
+.search_results .item:hover > .text {
+  color: @searchResultsColorHover;
+}
+/* Text: Vertikalni centrovani pomoci ghost techniky z http://css-tricks.com/centering-in-the-unknown/ */
+.search_results .item > .text:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; /* Adjusts for spacing */
+}
+
+.search_results .text > .text_inside {
+  display: inline-block;
+  vertical-align: middle;
+  width: 259px; /* Sirka rodice - minus 4 pixely posun ghosta kvuli FF */
+}
+
+
+.search_results .text .head {
+  width: 263px;
+  font-size: 22px;
+  line-height: 25px;
+  margin-bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.search_results .text p {
+  margin-bottom: 0;
+}
+
+.search_results .text .friends {
+  .opacity(.5);
+}
+
+
+/* Nenalezeno */
+
+.search_results .item.not_found > .text {
+  margin-left: 0;
+  width: auto;
+  text-align: center;
+}
+
+.search_results .item.not_found .search_anchor {
+  color: @linkColor;
+}
+
+// SEARCH BOX
+// -----------------------
+.search_field {
+  .search_input_box {
+    width: 186px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    margin-bottom: 2* @baseLineHeight;
+    background-color: @searchFieldBackground;
+    .border-radius(0);
+  }
+
+  .search_input_box:before {
+    background-color: lighten(@linkColor, 23%);
+    background-color: fade(@linkColor, 50%);
+    right: 4px; top: 4px;
+    background-position: 5px -64px;
+  }
+
+  .search_input_box:hover:before,
+  .search_input_box.focus:before {
+    background-color: @linkColor;
+  }
+
+  .search_input {
+    color: @searchFieldColor;
+  }
+
+  .search_input::-webkit-input-placeholder {
+      color: @searchFieldColor;
+  }
+  .search_input:-moz-placeholder {
+      color: @searchFieldColor;
+  }
+
+}
+
+// urceno pro IE 8, spatne pozicuje pozadi
+.no-backgroundsize .search_field .search_input_box:before {
+  background-position: 5px -103px!important;
+}

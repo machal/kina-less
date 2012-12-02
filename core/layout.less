@@ -1,0 +1,137 @@
+
+// LAYOUT
+// Základní layout webu
+// -------------------------------------------------------------------------------------------
+
+body {
+  margin: 0;
+  padding: 0;
+  color: @bodyColor;
+  background: @bodyBackgroundColor;
+}
+
+
+// Obal stranky
+#container {
+  width: 967px;
+  position: relative;
+}
+
+/* Obsah */
+#content_container {
+  margin: 0 0 70px 201px;
+  padding-top: 60px;
+}
+
+// Policko pro vyhledavani v obsahu: prilepene nahore a centrovano na stred layoutu.
+#search {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 160px;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+
+// Logo a navigace
+#logo {
+  position: fixed;
+  height: 144px;
+  width: 143px;
+  top: 13px;
+  left: 24px;
+
+  a {
+    display: inline-block;
+
+		&:hover,
+		&:focus,
+		&:active {
+		  text-decoration: none;
+		}
+  }
+
+  // Odstraneni prazdneho prostoru pod logem kvuli prazdnym znakum v HTML 
+  img {
+    float: left;
+  }
+}
+
+// Wrapper pro obsah stranek s pozadim
+// (napr. sekce Ke stazeni)
+.content_wrapper {
+  background: @tilesBgColorFallback;
+  background: @tilesBgColor;
+  padding: 29px 29px 60px 29px;
+
+  .clearfix();
+}
+
+
+// Uzky nalevo: Pouziva se v seznamu kategorii v sekci Stahnete si
+.column_thin {
+  float: left;
+  width: 248px;
+}
+
+// Siroky naprav: Pouziva se v seznamu souboru v sekci Stahnete si
+.column_wide {
+  float: left;
+  width: 455px;
+}
+
+.column_thin + .column_wide {
+  margin-left: 5px;
+}
+
+// Specificke styly pro jednotlive stranky
+// -----------------------------------------
+
+#content.wide {
+  width: 799px;
+}
+
+// Detail filmu
+.content_main {
+  float:  left;
+  width: 48%;
+  margin-bottom: 3*@baseLineHeight;
+}
+
+.content_side {
+  float:  right;
+  width: 52%;
+  padding-top: 25px;
+}
+
+
+// Uvodni stranka
+.home_front_box {
+  margin-bottom: 24px;
+}
+
+// Detail
+#movie_content,
+.movie_ratings {
+  background-color: @contentBgFallback;
+  background-color: @contentBg;
+}
+
+.movie_ratings {
+  margin-top: 3px;
+  padding-top: 13px;
+}
+
+// Databaze filmu
+#letter_list .item {
+  display: inline-block;
+  padding: 5px;
+}
+
+// --- Fancybox ---
+
+// Odstranime bily ramecek kolem obsahu
+.fancybox-outer {
+  background-color: transparent !important;
+}

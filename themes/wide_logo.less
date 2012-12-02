@@ -1,0 +1,53 @@
+// Wide logo Theme
+// Styl pro kina s obdelnikovym logem (Central)
+// --------------------------------------------
+
+// Navigacni cast tady nema fixni pozici, protoze logo zasahuje do obsahu
+#logo, #nav {
+  position: absolute;
+}
+
+// Logo je textove (dokud ho nenahradime grafickym)
+// a napozicovane trochu niz nez ctvercova loga (tim posunuje obsah dolu)
+#logo {
+	top: 47px;
+	font-size: 60px;
+	height: 60px;
+	line-height: 60px;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	letter-spacing: -0.03em;
+
+	a {
+		color: #fff;		
+	}
+}
+
+#nav {
+	top: 162px;
+}	
+
+// Poprve u nas
+.page_title.home_name {
+	position: static;
+	margin: 0;
+	padding: 0;
+	
+	.home_first {
+		position: absolute;
+		top: 75px;
+		left: 343px;
+	}	
+}
+
+
+// Obsahovy sloupec
+// Obsah je ctvercovym logem posunuty dolu
+#content_box {
+	padding-top: 70px;
+	
+	#page_home & {
+		padding-top: 65px;
+	}
+}

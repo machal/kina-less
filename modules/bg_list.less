@@ -1,0 +1,44 @@
+// Bg_list.less
+// Modul Seznam polozek s barevnym pozadim (v dlazdicich)
+// --------------------------------
+
+.bg_list  {
+  margin: 0;
+  padding: 0;
+
+	li  {
+	  background: @tileListBgColor;
+	  padding: 4px 8px 4px;
+	  margin: 0 0 2px 0;
+	  height: 17px;
+	  .text-overflow();
+	}
+}
+
+/* Varianta s automatickou vyskou */
+
+.bg_list.auto_height li  {
+  height: auto;
+}
+
+/* Varianta inverzni */
+
+.bg_list_inverse {
+    li {
+      padding: 8px 12px;
+    background: @InverseListBgColor;
+
+    &:hover {
+      background: @InverseListHover;
+    }
+  }
+
+  a {
+    display: block;
+    color: @InverseListColor;
+    &:hover {
+    color: @InverseListColor;
+  }
+
+  }
+}

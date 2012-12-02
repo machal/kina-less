@@ -1,0 +1,46 @@
+
+// TOOLTIPY
+// Prevzato z bootstrap tooltip
+// --------------------------
+
+// Prvek, nad kterym se tooltip zobrazuje
+// .with_tooltip {
+//   //cursor: help;
+// }
+
+// Samotny tooltip se zobrazuje jako bublina. Defaultne je schovany
+.tooltip {
+  position: absolute;
+  z-index: 100;
+  display: block;
+  visibility: visible;
+  padding: 8px;
+  .opacity(0);
+  &.in     { .opacity(1); }
+  &.top    { margin-top:  -2px; }
+  &.right  { margin-left:  2px; }
+  &.bottom { margin-top:   2px; }
+  &.left   { margin-left: -2px; }
+  &.top .tooltip-arrow    { #popoverArrow > .top(10px, @tooltipBg); }
+  &.left .tooltip-arrow   { #popoverArrow > .left(10px, @tooltipBg); }
+  &.bottom .tooltip-arrow { #popoverArrow > .bottom(10px, @tooltipBg); }
+  &.right .tooltip-arrow  { #popoverArrow > .right(10px, @tooltipBg); }
+}
+
+// Vnitrni oblast tooltipu (text)
+.tooltip-inner {
+  max-width: 160px;
+  padding: 5px 10px;
+  color: @tooltipColor;
+  text-align: center;
+  text-decoration: none;
+  background-color: @tooltipBg;
+	white-space: normal;
+  .border-radius(4px);
+}
+
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+}

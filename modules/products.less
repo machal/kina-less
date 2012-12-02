@@ -1,0 +1,95 @@
+// Products.less
+// Modul Produkty - Terry Goods
+// -----------------------------
+.products {
+    clear: both;
+  margin: 15px;
+  padding: 15px 25px;
+  overflow: hidden;
+
+  .border-radius(5px);
+   background-color: @productsBgFallback;
+   background-color: @productsBg;
+}
+
+.products_text,
+.products_link:focus,
+.products_link:active,
+.products_link:visited {
+  color: @productColor;
+  text-decoration: none
+}
+
+.products h2 {
+  text-align: center;
+  font-size: 22px;
+}
+
+.products h2 a {
+  font-weight: normal;
+	color: @productHeadColor;
+	color: @productHeadColorFallback;	
+	
+	&:hover,
+	&:focus,
+	&:active {
+		color: @productHeadColorHover;	  
+	}	
+}
+
+.products_item {
+  float: left;
+  width:  25%;
+  line-height: 14px;
+  text-align: center;
+
+	&:hover,
+	&:focus,
+	&:active {
+    background-color: @productsItemHover;
+  }
+}
+
+
+.products_img {
+	display: block;
+	padding: 5px;
+	height: 90px;
+	margin-bottom: 5px;
+	overflow: hidden;
+}
+
+.products_img img {
+	width: 100%;
+}
+
+.products_link:hover {
+	text-decoration: none;
+}
+
+.products_text {
+  display: block;
+  padding-bottom: 5px;
+	font-weight: normal;
+}
+
+#terryGoods {
+    margin: 0 15px 15px;
+    padding: 15px 25px;
+    overflow: hidden;
+		.border-radius(5px);
+
+		h2 a {
+		  font-weight: normal;
+		  text-align: center;
+
+		  &:hover {
+		  	text-decoration: none;
+			}
+		}
+
+}
+
+.terryGood {
+	float: left;
+}

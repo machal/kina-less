@@ -1,0 +1,131 @@
+// Icons.less
+// Ruzne ikonky pouzite globalne
+// ----------------------------------
+
+.icon_svetozor,
+.icon_biooko,
+.icon_aero {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  vertical-align: text-top;
+  background-repeat: no-repeat;
+  .at2x('../img/movie_icons.png?1', 100%, auto);
+}
+
+.icon_svetozor,
+.icon_biooko,
+.icon_aero,
+.open .dropdown-toggle .icon_svetozor,
+.open .dropdown-toggle .icon_biooko,
+.open .dropdown-toggle .icon_aero {
+  .at2x('../img/movie_icons.png?1', 100%, auto);
+}
+.dropdown-toggle .icon_svetozor,
+.dropdown-toggle .icon_biooko,
+.dropdown-toggle .icon_aero {
+  .at2x('../img/movie_icons_white.png?1', 100%, auto);
+}
+
+.icon_svetozor {
+  background-position: 0 0;
+}
+
+.icon_biooko {
+  background-position: 0 -72px;
+}
+
+.icon_aero {
+  background-position: 0 -48px;
+}
+
+/* ================================================================================
+   F) Obrazky pro vetsi pixel density
+*/
+
+.rarr_icon:before {
+  .at2x('../img/icon_rarr_white.png?10', 100%, auto);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.search_input_box:before {
+  position:absolute;
+  right: 0; top: 0;
+  content: "";
+
+  display:block;
+  width: 28px;
+  height: 28px;
+
+  .at2x(e(%("../img/%d/search_bg.png?16", @imagesFolder)), 28px, auto);
+  background-position: 0 -1px;
+  background-repeat: no-repeat;
+}
+
+.icon_facebook {
+  float: left;
+  margin-right: 5px;
+  width: 22px;
+  height: 22px;
+
+  .at2x('../img/icon_facebook.png?2', 100%, auto);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.icon_preview {
+  display: inline-block;
+  margin: -1px 0 0 5px;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+
+  .at2x('../img/icon_preview.png?1', 22px, auto);
+  background-position: 0 -22px;
+}
+
+
+.tag > .arrow {
+  .at2x(e(%("../img/%d/program_tag.png?10", @imagesFolder)), 100%, auto);
+}
+
+.prg_row.s_with_cycle .col_cycle {
+  .at2x(e(%('../img/%d/prg_table_cycle.png?20', @imagesFolder)), 20px, auto);
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+.prg_widget .prg_row.s_with_cycle .col_cycle {
+  .at2x(e(%('../img/%d/prg_widget_cycle.png?16', @imagesFolder)), 20px, auto);
+  background-repeat: no-repeat;
+}
+
+.age_icon {
+  .at2x('../img/age_icons.png?10', 100%, auto);
+}
+
+.play_trailer {
+  .at2x(e(%('../img/%d/play_trailer.png?11', @imagesFolder)), 221px, auto);
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.play_icon {
+  .at2x(e(%('../img/%d/play_icon.png?1', @imagesFolder)), 58px, auto);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.icon_arr {
+  display: inline-block;
+  width: 8px;
+  height: 10px;
+
+  .at2x(e(%('../img/%d/icon_tip.png?1', @imagesFolder)), 8px, auto);
+}
+

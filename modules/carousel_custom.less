@@ -1,0 +1,61 @@
+//
+// Carousel
+// Rozsireni stylu Boostrapu
+// --------------------------------------------------
+
+.carousel-frame {
+  margin: 0 auto;
+}
+// Modul Carousel: Varianta slideru fotek v dialogu
+.carousel_photos {
+  background: @carouselBg;
+  margin-bottom: 0;
+  text-align: center;
+
+  .carousel-inner {
+    // height: 100px;
+    // width: 448px;
+    padding: 0;
+  }
+  .item {
+    float: left;
+    display: block;
+
+    a {
+      display: block;
+      padding: 15px 5px;
+    }
+  }
+
+  .carousel-control {
+    .at2x(e(%("../img/%d/carousel_icons.png?10", @imagesFolder)), 91px, auto); // sirka sprity
+    width: 35px; // sirka ikonky
+    height: 60px;
+    text-indent: -1000em;
+
+    cursor: pointer;
+
+    // resetovani puvodnich hodnot
+    background-color: transparent;
+    .border-radius(0);
+    border: 0;
+
+    &.left {
+      left: 25px;
+      top: 38px;
+      background-position: 0 0;
+    }
+    &.right {
+      background-position: -56px 0;
+      top: 38px;
+      right: 25px;
+    }
+  }
+}
+
+.fancybox-inner .carousel_photos {
+  .border-radius(0 0 8px 8px);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

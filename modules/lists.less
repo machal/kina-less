@@ -1,0 +1,304 @@
+//
+// SEZNAMY
+// Ruzne varianty pouzitych seznamu
+// ----------------------------------------
+
+// Zakladni seznam pro bezny text
+.list_basic {
+  padding-left: 15px;
+
+  li {
+    margin-bottom: @baseLineHeight;
+  }
+}
+
+// --- Modul seznam ---
+// Pouziva se v obou seznamech v sekcich Stahnete si
+
+.list {
+
+  ul,
+  li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .list_item {
+    position: relative;
+    display: block;
+    height: 18px;
+    padding: 9px 12px;
+    margin: 0;
+  }
+
+  .with_top_line {
+    border-top: 2px solid @listBorderColor;
+  }
+
+  .js & .list_item {
+    cursor: pointer;
+  }
+
+	li {
+    border-bottom: 2px solid @listBorderColor;
+	}
+
+  * > li:last-child {
+    border-bottom: 0;
+  }
+
+  .list_name a {
+    color: @listColor;
+    font-weight: normal;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+
+  .list_item:hover,
+  .list_item:focus,
+  .list_item:active,
+  strong.list_item {
+    background-color: @listBgHoverFallback;
+    background-color: @listBgHover;
+    text-decoration: none;
+  }
+
+  strong.list_item {
+    color: @listColorActive;
+  }
+
+  .list_info {
+    float: right;
+  }
+
+  .list_name_file {
+    max-width: 280px;
+    display: inline-block;
+    height: 18px;
+    .text-overflow();
+  }
+
+  .with_category .list_name_category {
+    max-width: 120px;
+    display: inline-block;
+    height: 18px;
+    .text-overflow();
+  }
+
+  .with_category .list_name_category:hover,
+  .with_category .list_name_category:focus,
+  .with_category .list_name_category:active {
+    text-decoration: underline;
+  }
+
+  .with_category .list_name_file {
+    max-width: 160px;
+    display: inline-block;
+    height: 18px;
+    .text-overflow();
+  }
+
+  .list_perex {
+    max-width: 80px;
+    display: inline-block;
+    height: 16px;
+    .text-overflow();
+  }
+
+
+}
+
+// --- Modul seznam: varianta s tmavou barvou pozadi polozek ---
+
+.list.inverted {
+
+	li {
+		border-bottom: 0;
+	}
+
+  .list_item {
+    background-color: @listInvBgFallback;
+    background-color: @listInvBg;
+    border: 0;
+    margin-bottom: 2px;
+  }
+
+  a {
+    color: @listInvColor;
+    font-weight: bold;
+  }
+
+  .list_item:hover,
+  .list_item:focus,
+  .list_item:active,
+  strong.list_item {
+    background-color: @listInvBgActive;
+  }
+
+}
+
+// --- Modul seznam: varianta se sipkou u aktivni polozky ---
+
+.list.with_arrow {
+
+  .list_item {
+    margin-right: 20px;
+  }
+
+  strong.list_item:after {
+    left: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-width: 18px;
+    top: 50%;
+    margin-top: -18px;
+    border-left-color: @listInvBgActive;
+  }
+
+}
+
+
+// --- Modul seznam: varianta s pravidelnou mrizkou ---
+
+.list.grid {
+  li {
+    float: left;
+    width: 35px;
+    margin: 0 4px 2px 0;
+
+    &.double {
+      width: 74px;
+    }
+
+    a {
+      text-align: center;
+    }
+  }
+
+  li:nth-child(6n+6) {
+    margin-right: 0;
+  }
+
+  .list_item {
+    padding: 9px 0 8px;
+  }
+
+  .active .list_item {
+    color: @white;
+    background-color: @listInvBgActive;
+  }
+
+  .f_custom {
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+}
+
+// --- Modul seznam s obrazky: varianta s flexibilni vyskou a obrazkem nalevo ---
+// (napr. na strance Partneri)
+
+.list.with_images {
+  margin-bottom: @baseLineHeight;
+
+  li {
+    height: auto;
+  }
+
+ .image {
+		float: right;
+		width: 160px;
+		display: block;
+		text-align: right;
+	}
+
+	.image img {
+		max-width: 140px;
+		height: auto;
+		max-height: 40px;
+	}
+
+	.text {
+		float: left;
+		width: 520px;
+		display: block;
+	}
+
+}
+
+// --- Modul inline seznam: zobrazeni polozek v radku s odrazkami ---
+
+.list_inline {
+  list-style: none;
+  padding: 0;
+  margin-bottom: @baseLineHeight;
+
+  li {
+    display: inline-block;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin: 0 4px 0 1px;
+      .border-radius(5px);
+      background: @black;
+    }
+  }
+}
+
+// Bg_list.less
+// Modul Seznam polozek s barevnym pozadim (v dlazdicich)
+// --------------------------------
+
+.bg_list,
+.bg_list li  {
+  //list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bg_list li  {
+  background: @tileListBgColor;
+  padding: 4px 8px 4px;
+  margin-bottom: 2px;
+  height: 17px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bg_list.auto_height li  {
+  height: auto;
+}
+
+/* Varianta inverzni */
+.bg_list_inverse {
+    li {
+      padding: 8px 12px;
+    background: @InverseListBgColor;
+
+    &:hover {
+      background: @InverseListHover;
+    }
+  }
+
+  a {
+    display: block;
+    color: @InverseListColor;
+    &:hover {
+    color: @InverseListColor;
+  }
+
+  }
+}

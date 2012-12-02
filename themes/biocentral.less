@@ -1,0 +1,213 @@
+//   D) Vyjimky pro Bio Central
+// ----------------------
+
+// --- Typografie ---
+
+#container .prg_table .name.f_custom,
+#container .tile h2.f_custom,
+#container .search_results h3.f_custom {
+  font-family: @baseFontFamily;
+  font-weight: bold;
+}
+
+// ==============================================================================
+// B) Tiskove styly
+
+
+@media print {
+
+
+} // @media print
+
+
+
+// ==============================================================================
+// C) Obrazovkove styly
+
+
+@media screen {
+
+  // --- Vyhledavani ---
+
+  // Vertikalni centrovani vysledku vyhledavani kvuli jine velikosti pisma
+  .search_results .item {
+    padding-top: 8px;
+    padding-bottom: 13px;
+  }
+
+  // Vyjimka: kvuli jine pozici Forsage jinak formatujeme nadpis
+  .search_results .text .head {
+    line-height: 35px;
+    margin-bottom: -5px;
+  }
+
+  // Navigace kin
+  .icon_svetozor,
+  .icon_biooko,
+  .icon_aero,
+  .open .dropdown-toggle .icon_svetozor,
+  .open .dropdown-toggle .icon_biooko,
+  .open .dropdown-toggle .icon_aero,
+  .dropdown-toggle .icon_svetozor,
+  .dropdown-toggle .icon_biooko,
+  .dropdown-toggle .icon_aero {
+    .at2x('../img/aero/movie_icons.png?1', 100%, auto);
+  }
+
+  // --- Programova tabulka ---
+  .prg_table .col_movie_name {
+    padding-top: 3px;
+  }
+  .prg_table .name {
+  font-size: 20px;
+  }
+
+  .prg_widget .prg_row:hover .reservation_icon {
+    background-position: 0 -78px;
+    color: @white;
+  }
+
+  // Mala programova tabulka
+  .prg_widget .cycle_icon:hover,
+  .prg_widget .cycle_icon:focus,
+  .prg_widget .cycle_icon:active {
+    color: @tagColor;
+  }
+
+  .prg_widget .prg_row:hover .cycle_icon .cycle_name,
+  .prg_widget .prg_row:focus .cycle_icon .cycle_name,
+  .prg_widget .prg_row:active .cycle_icon .cycle_name {
+    background: @greenDark;
+    background: @greenDark;
+    color: @tagColor;
+  }
+
+  // --- Navigace ---
+
+  #nav {
+    top: 182px;
+  }
+
+  .no-rgba #nav .item {
+    color: darken(@navBaseColor, 12%);
+  }
+
+  .no-rgba #nav .nav_main .item,
+  .no-rgba #nav .nav_secondary .item {
+    color: darken(@navMainColor, 7%);
+  }
+
+  // Druhotna navigace - mensi font
+  .nav_secondary {
+    font-size: 21px;
+    line-height: 23px;
+  }
+
+  .nav_secondary .item {
+    height: 23px;
+  }
+
+
+  // --- Terryho ponozky ---
+  #terryGoods h2 {
+    font-size: 21px;
+  }
+
+  // --- Modul Page Title ---
+  .page_title h1 {
+    .age_icon {
+      position: relative;
+      top: -3px;
+    }
+  }
+  .page_title.inline .subhead {
+    top: -12px;
+  }
+
+  // Vetsi pismo v navigacnich zalozkach
+  .tabs .tab {
+    font-size: 21px;
+  }
+
+  .tabs.nav_top .tab,
+  .tabs.paging .tab {
+    font-size: 13px;
+  }
+
+  // ---- Modul Filtry ---
+
+  .tabs_pills > .active > a,
+  .tabs_pills > .active > a:hover {
+  background: @white;
+  color: @black;
+  }
+
+  // --- Modul Strankovani ---
+  .tabs_pills a  {
+    padding: 4px 15px;
+  }
+
+  // Nav Prepinani kin
+  .nav_top a  {
+    padding: 0 10px;
+  }
+
+  .nav_top .dropdown-menu a {
+    padding: 8px 10px 7px;
+  }
+
+  // --- Modul Tiles ---
+	// Upravy zejmena kvuli pouziti systemoveho pisma
+
+  .tile h2 {
+    font-size: 23px;
+    line-height: 25px;
+    font-weight: bold;
+
+    a strong {
+      font-weight: bold;
+    }
+  }
+
+  .tile.music {
+
+		.preparing {
+	    top: -22px;
+	    line-height: 10px;
+	  }
+
+	  h2 {
+			margin-top: -3px;
+	    width: 220px;
+	  }
+	}
+
+
+	.tile.event {
+
+		h2 {
+			max-height: 50px;
+		}
+
+		.hider {
+			bottom: 25px;
+		}
+
+	}
+
+  .tile_wrap {
+    height: 200px;
+  }
+
+} // @media screen
+
+// ==============================================================================
+// E) Obrazky ve dvou rozlisenich
+// - Obrazky je nutne nacitat mimo media query, protoze mixin at2x pouziva media query s pixel-density
+
+.prg_widget .param_icon {
+  .at2x('../img/prg_table_param_icons_dark.png?2', 100%, auto);
+}
+.prg_widget .param_icon.no_subtitles {
+  .at2x('../img/prg_table_param_orig_dark.png?1', 100%, auto);
+}

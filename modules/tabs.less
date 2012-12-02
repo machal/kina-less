@@ -1,0 +1,163 @@
+
+// TAB CONTAINERS
+// Taby jsou urcene pro rozdeleni obsahu do sekci
+// ---------------------------------------------
+
+// Taby jsou plovouci, tudiz jejich rodic musi byt clearovan
+.tabbable {
+  .clearfix();
+}
+
+// Kontejner pro taby
+.tab_content {
+  overflow: auto; // v pripade, ze by obsah pretekl se zobrazi scrollbar
+
+  // Obsah je defaultne schovan
+  > .tab_pane {
+    display: none;
+  }
+
+  // Aktivni tab je zobrazen
+  > .active {
+    display: block;
+  }
+}
+
+// TABS
+// Navigace, pomoci ktere uzivatele preklikavaji obsah tabu
+// ------------------------------------------------
+
+// Genericke taby
+.tabs {
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 3px solid @tabBorderColor;
+
+  > li {
+    float: left;
+    margin-right: 2px;
+  }
+
+  > a {
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+.tab {
+  position: relative;
+  display: block;
+  font-size: 22px;
+  line-height: 34px;
+  height: 34px;
+  padding: 0 15px 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.tabs a,
+.tab {
+  font-weight: normal;
+  text-decoration: none;
+  color: @tabColor;
+  background-color: @tabBgFallback;
+  background-color: @tabBg;
+
+  &:hover {
+    color: @tabHoverColor;
+    background-color: @tabHoverBgFallback;
+    background-color: @tabHoverBg;
+    text-decoration: none;
+  }
+}
+
+
+.tabs > .active > a,
+.tabs > .active > a:hover,
+.tabs a.current,
+.tabs a.current:hover {
+  color: @tabActiveColor;
+  background: @tabActiveBg;
+  cursor: default;
+}
+
+
+// Varianta Tabs Widget - pouziva se v detailu filmu
+
+.tabs_widget a {
+  font-weight: normal;
+  color: @tabWidgetColor;
+  background: @tabWidgetBgFallback;
+  background: @tabWidgetBg;
+}
+
+// Varianta Tab Movie Photogallery
+// - odkaz na fotogalerii z Kinobox.cz pod fotkou
+// (.tab .tab_top .tab_movie_photogallery)
+
+.tab_movie_photogallery {
+  .at2x('../img/search_bg.png?12', 28px, auto);
+  background-position: 10px 0;
+  padding-left: 35px;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  color: @navMovieColor;
+  background-color: @navMovieBgFallback;
+  background-color: @navMovieBg;
+}
+
+.tab_movie_photogallery:hover,
+.tab_movie_photogallery:focus,
+.tab_movie_photogallery:active {
+  background-position: 10px -98px;
+  color: @navMovieHoverColor;
+  background-color: @navMovieHoverBgFallback;
+  background-color: @navMovieHoverBg;
+}
+
+/* Modul Taby s ikonkami */
+.tabs_icons {
+  //overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    float: left;
+    margin-right: 2px;
+  }
+
+  .tab {
+    position: static;
+    background: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  > .active > a, > .active > a:hover {
+    background-color: transparent;
+  }
+
+}
+
+
+// Sipka naznacujici externi odkaz v tabu
+.rarr_icon {
+  padding-right: 30px!important;
+}
+
+.rarr_icon:before {
+  position: absolute;
+  content: ">";
+  right: 15px;
+  top: 11px;
+  width: 8px;
+  height: 13px;
+  text-indent: -9999em;
+}

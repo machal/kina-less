@@ -1,0 +1,236 @@
+
+// Promenne a parametry univerzalniho stylu kina
+// -----------------------------------------
+
+// GLOBALNI HODNOTY
+// --------------------------------------------------
+
+@imagesFolder:			uni;
+
+// Barvy specificke pro toto schema
+@black:							#000;
+@white:							#fff;
+@gray:							#666;   
+@grayDark:					#333;   
+@grayDarkest:				#111111;
+@grayLighter:				#999;
+@grayLight:					#e6e6e6;
+
+// Obecne reusable barvy
+@bodyBackgroundColor:		#a8a8a8;
+@bodyColor:							#666;
+@textColor:							#666;
+@linkColor:							#333;
+
+// Typografie
+@baseLineHeight:		19px;
+@baseFontFamily:		"Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+// NAVIGACE
+// --------------------------------------------------
+
+// Nav
+@navBaseColor:					@white;
+@navBaseColorFallback:  @white;
+@navBaseColorHover:			@gray;
+
+// Nav main
+@navMainColor:					@gray;
+@navMainColorFallback:	@gray;
+@navMainColorHover:			@white;
+@navMainColorActive:		@grayDark;
+
+// PROMENNE MODULU
+// --------------------------------------------------
+
+// Titulek
+@pageSubtitleColor:							fade(@white, 50%);
+@pageSubtitleColorFallback:			darken(@white, 50%);
+
+// First time box
+@ftb_color:           @grayDark;
+@ftb_strong_color:    @linkColor;
+@ftb_border_color:    #e9edec;
+
+// Vyhledavaci pole
+@searchBackground:				@white;
+@searchColor:							@gray;
+@searchColorInverse:			@gray;
+
+@searchResultsBackground:		@white;
+@searchResultsColor:				@gray;
+@searchResultsColorHover:		@gray;
+@searchResultsHover:				@grayLight;
+@searchResultsBorder:				@grayLight;
+
+@searchFieldBackground:		@white;
+@searchFieldColor:				@gray;
+
+// Taby
+@tabColor:								@white;
+@tabBg:										fade(@grayDark, 50%);
+@tabBgFallback:						@grayLight;
+@tabHoverColor:						@white;
+@tabHoverBg:							@grayDark;
+@tabHoverBgFallback:			@grayDark;
+@tabActiveColor:					@grayDark;
+@tabActiveBg:							@white;
+@tabBorderColor:					@white;
+
+@tabWidgetColor: 					@white;
+@tabWidgetBg: 						@grayDark;
+@tabWidgetBgFallback: 		@grayDark;
+
+// Dropdown
+@dropdownColor:							@gray;
+@dropdownItemHover:					@grayLight;
+@dropdownToggleColor:				@gray;
+@dropdownToggleBg:					@white;
+@dropdownToggleBgFallback:	@white;
+@dropdownToggleBgHover:			@grayLight;
+@dropdownItemBorder:      	@grayLight;
+
+.tab_colors() {
+	color: @white;
+	background-color: fade(@linkColor,25%);
+}
+
+.tab_active_colors() {
+	color: @white;
+	background-color: fade(@grayDarkest, 25%);
+}
+
+.tab_hover_colors() {
+	background-color: fade(@linkColor,50%);
+}
+
+.tab_border_colors() {
+	border-color: fade(@grayDarkest, 50%);
+}
+
+.tab_widget_colors() {
+	background: darken(@linkColor, 10%);
+	background-color: fade(@linkColor,75%);
+}
+
+// Tagy
+@tagColor:									@white;
+@tagHoverColor:							@white;
+@tagDisabledColor:					fade(@white, 75%);
+@tagDisabledColorFallback:	@grayLight;
+
+// Cykly
+@cycleIconBg:								@grayDark;
+@cycleIconBgFallback:  			@grayDark;
+@cycleIconBgHover:					@grayDark;
+@cycleIconBgHoverFallback:  @grayDark;
+
+// Programova tabluka
+@tableLinkColor:						@gray;
+@tableColor:								@gray;
+@prgTableBg:								@white;
+@prgTableBgFallback:				@white;
+@prgTableBgHover:						@grayLight;
+@prgTableBgHoverFallback:		@grayLight;
+@prgWidgetColor:						@gray;
+@prgWidgetBg:								@white;
+@prgWidgetBgFallback:				@white;
+@prgWidgetBgHover:					@grayLight;
+
+// Dlazdicovy seznam
+@tilesBgColor: 							fade(@white, 50%);
+@tilesBgColorFallback: 			@grayLight;
+@tileBgColor: 							@white;
+@tileBgHoverColor: 					lighten(@grayLight, 5%);
+@tileDateColor: 						@gray;
+@tileDateBgColor: 					@grayLight;
+@tileListBgColor: 					@gray;
+@tileListBgColorFallback:		@grayLight;
+@tileListBgRadio1Color:			@grayLight;
+
+// Dlazdicovy seznam: Navigace po polozkach vicenasobnych dlazdic (Novinky, Udalosti)
+@tileNavColor:							@grayLighter;
+@tileNavColorFallback:			@grayLighter;
+@tileNavBg:									@white;
+@tileNavHoverColor:   			@grayDark;
+
+// Dlazdicovy seznam: Navigace s inversni paletou
+@tileNavInvColor:       @grayLighter;
+@tileNavInvActive:      @grayDark;
+
+// Datepicker
+@datepickerColor:				@white;
+@datepickerBorder:			rgba(255,255,255,0.25);
+
+// Inverzni list (v dlazdicich)
+@InverseListBgColor:		fade(@grayDark, 10%);
+@InverseListHover:			fade(@linkColor, 25%);
+@InverseListColor:			@linkColor;
+
+// List
+@listColor:							@bodyColor;
+@listBorderColor:				lighten(@gray, 20%);
+@listBgHover:						@grayLight;
+@listBgHoverFallback:		@grayLight;
+@listColorActive:			  @white;
+@listInvColor:					@white;
+@listInvBg:							fade(@gray, 50%);
+@listInvBgFallback:			@gray;
+@listInvBgActive:				@grayDark;
+
+// Tooltip
+@tooltipColor:					@white;
+@tooltipBg:							@grayDark;
+
+// Carousel (fotky)
+@carouselBg:            lighten(desaturate(@linkColor, 55%), 55%);
+
+// Text box
+@textBoxBg:             @white;
+
+// STRANKY
+// --------------------------------------------------
+
+// Detail filmu
+@contentBg:									fade(@white, 50%);
+@contentBgFallback:					@white;
+@contentBgHover:						@white;
+@contentBgHoverFallback:		@grayLight;
+
+// Terryho ponozky
+@productColor:							@gray;
+@productHeadColor:					@gray;
+@productHeadColorFallback:	@gray;
+@productHeadColorHover:			@grayDark;
+@productsBg:								@white;
+@productsBgFallback: 				@white;
+@productsItemHover:					@grayLight;
+
+// Detail filmu: Navigace pod fotkou
+@navMovieColor:							@white;
+@navMovieBg:								@gray;
+@navMovieBgFallback:				@gray;
+@navMovieHoverColor: 				@white;
+@navMovieHoverBg: 					@grayDark;
+@navMovieHoverBgFallback: 	@grayDark;
+
+// Detail filmu: odkazy na CSFD/IMDb a spol.
+@chartColor:								@white;
+@chartRowBg:								@gray;
+@chartRowBgFallback:				@gray;
+@chartRowBgHover:						@grayDark;
+@chartRowBgHoverFallback:		@grayDark;
+@chartBarBg:                lighten(@grayDark, 5%);
+@chartBarHoverBg:           @grayDark;
+@chartValueColor:           @white;
+
+// Detail cyklu
+@infoBackground:		@white;
+@infoColor:					@black;
+
+// Prazdna plocha namisto nepritomneho obrazku
+@substImageBg:										@grayLight;
+@substImageBgFallback:						@grayLight;
+@substImageBgInverted:						@gray;
+@substImageBgInvertedFallback:		@gray;

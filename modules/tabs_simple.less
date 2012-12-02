@@ -1,0 +1,38 @@
+
+// TABS SIMPLE
+// Zjednodusena varianta tabu, ktera vyuziva pouze jednoduche odkazy, taby nejsou vizualizovane
+// Pouzite v dialogu "Poprve u nas"
+// ----------------------------------------------
+
+.tabs_simple {
+  margin: 0;
+  list-style: none;
+
+  &.tile_nav {
+    overflow: visible;
+  }
+
+  > li {
+    float: left;
+  }
+
+  .tab_header {
+    width: 150px;
+    left: -155px;
+    top: 2px;
+    text-align: right;
+    font-size: 13px;
+  }
+}
+
+// Popisek tabu, který se objevuje pri najeti mysi
+.tab_header {
+  display: none;
+  position: absolute;
+
+}
+
+// Popisek aktivniho tabu
+.active .tab_header {
+  display: block;
+}

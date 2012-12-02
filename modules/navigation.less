@@ -1,0 +1,245 @@
+// Navigation.less
+// Hlavni, sekundárni a doplnkove navigace na webu
+// -----------------------------------------------------
+
+/* Navigace */
+.nav, .nav ul {
+  padding: 0;
+  list-style: none;
+}
+
+.nav {
+  margin: 0;
+
+  .item {
+    text-decoration: none;
+    outline: none;
+    color: @navBaseColorFallback;
+    color: @navBaseColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: @navBaseColorHover;
+    }
+  }
+
+  ul {
+    margin: 12px 0 0;
+
+    a {
+      font-family: @baseFontFamily;
+      font-size: 13px;
+      line-height: 19px;
+
+      color: @navBaseColorFallback;
+      color: @navBaseColor;
+    }
+  }
+}
+
+
+
+.nav a,
+.nav_movie a  {
+  font-weight: normal;
+}
+
+
+
+// .nav strong.item,
+// .nav strong .item,
+// .nav b.item,
+// .nav .item b {
+//   color: @navMainColorActive;
+// }
+
+
+/* Navigace pod logem */
+#nav {
+  position: fixed;
+  top: 147px;
+  left: 23px;
+  width: 167px;
+}
+
+// Hlavni navigace
+.nav_main > li > .item,
+.nav_secondary > li > .item {
+  color: @navMainColorFallback;
+  color: @navMainColor;
+}
+
+.nav_main > li > .item:hover,
+.nav_main > li > .item:focus,
+.nav_main > li > .item:active,
+.nav_secondary > li > .item:hover,
+.nav_secondary > li > .item:focus,
+.nav_secondary > li > .item:active {
+  color: @navMainColorHover;
+}
+
+.nav_main > li > .item.active,
+.nav_secondary > li > .item.active {
+  color: @navMainColorActive;
+}
+/* Hlavni navigace */
+
+.nav_main {
+  font-size: 33px;
+  line-height: 33px;
+  margin-bottom: 12px;
+}
+
+.nav_main .item {
+  display: block;
+  // height: 33px;
+}
+
+/* Druhotna navigace */
+
+.nav_secondary > li > .item {
+  font-size: 22px;
+  line-height: 25px;
+  display: block;
+  // height: 25px;
+}
+
+#projects {
+  margin: 12px 0 0;
+}
+
+.expander {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  vertical-align: text-top;
+
+  .at2x(e(%("../img/%d/icon_expander.png?3", @imagesFolder)), 84px, 21px);
+}
+
+.is_collapsed {
+
+  .expander {
+    background-position: -21px 0;
+  }
+
+  ul {
+    display: none;
+  }
+}
+
+#projects > .item:hover .expander {
+  background-position: -42px 0;
+}
+
+#projects.is_collapsed > .item:hover .expander {
+  background-position: -63px 0;
+}
+/* Navigace v detailu */
+.nav_movie {
+  padding: 20px 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav_movie > li {
+  margin-bottom: 2px;
+}
+
+.nav_movie .tag {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 18px;
+}
+
+/* Navigace v detailu */
+.nav_movie a {
+  color: @navMovieColor;
+  background: @navMovieBgFallback;
+  background: @navMovieBg;
+}
+
+.nav_movie a:hover {
+  color: @navMovieHoverColor;
+  background: @navMovieHoverBgFallback;
+  background: @navMovieHoverBg;
+}
+
+/* Navigace kin */
+.nav_dropdown {
+  &.open {
+
+  }
+}
+
+/* "Patickova" navigace */
+
+  .nav_foot {
+    font-size: 13px;
+    line-height: 19px;
+    margin-bottom: 18px;
+  }
+
+  #nav {
+   .nav_foot .item {
+      display: block;
+      height: 19px;
+
+      &.item_with_icon {
+        line-height: 22px;
+        height: 22px;
+        margin: 16px 0;
+      }
+    }
+
+    .nav_foot_more {
+      margin-top: 10px;
+    }
+
+  }
+  /* Horni navigace (jazyk, kina)  */
+
+  body .nav_top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: visible;
+
+    font-size: 13px;
+    line-height: 19px;
+    margin-bottom: 10px;
+
+    li {
+      position: relative;
+    }
+
+    .tab {
+      line-height: 33px;
+      height: 33px;
+    }
+
+    a {
+      font-size: 13px;
+      margin-bottom: 0;
+      //padding: 0 10px;
+    }
+
+    > .dropdown > a {
+      margin-right: 0;
+      padding-right: 45px;
+    }
+
+    .tab_top {
+      .border-radius(0 0 10px 10px);
+    }
+    .dropdown-menu {
+      width: 100%;
+    }
+
+ }
+
+ #nav_lang a {
+  background: none;
+ }

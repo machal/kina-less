@@ -1,0 +1,58 @@
+// Global.less
+// Minimalni reset a zakladni typografie
+// -------------------------------------------------------------------------------------------
+
+body {
+  font-family: @baseFontFamily;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+input, textarea, select {
+  font-family: @baseFontFamily;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+p, ul, ol, blockquote, table, h1, h2, h3, h4, h5, h6 {
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+small, .small {
+  font-size: 11px;
+}
+
+a img {
+  border: 0;
+}
+
+a {
+  color: @linkColor;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+
+
+/* Focus pro kazdy element definujeme individualne podobne jako :hover  */
+:focus {
+  outline: none;
+}
+
+// --- Zobrazovaci animace ---
+// pouziva napriklad Bootstrap Tooltip
+
+.fade {
+  opacity: 0;
+  .transition(opacity .15s linear);
+  &.in {
+    opacity: 1;
+  }
+}

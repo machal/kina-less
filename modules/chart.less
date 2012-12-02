@@ -1,0 +1,62 @@
+// Chart.less
+// Modul Hodnoceni a recenze filmu
+// -----------------------------------------
+
+.chart {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: 2px;
+  }
+
+}
+
+.chart_row {
+  position: relative;
+  line-height: 34px;
+  height: 34px;
+  padding: 0 15px 0;
+  display: block;
+  color: @chartColor;
+  background: @chartRowBg;
+  background: @chartRowBgFallback;
+
+  .bar {
+    position: absolute;
+    left: 0; top: 0;
+    z-index: 0;
+    display: block;
+    height: 34px;
+    background: @chartBarBg;
+  }
+
+  strong, h3 {
+    position: relative;
+    z-index: 10;
+    font-size: 14px;
+    margin: 0;
+    line-height: 34px;
+  }
+
+  .value {
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+    top: 0;
+
+    color: @chartValueColor;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+
+    .bar {
+      background: @chartBarHoverBg;
+    }
+  }
+
+}

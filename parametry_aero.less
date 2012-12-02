@@ -1,0 +1,245 @@
+
+// Promenne a parametry pro tema Aero
+// -----------------------------------------
+
+// GLOBALNI HODNOTY
+
+@imagesFolder:			aero;
+
+// Zakladni barvy
+@black:							#000;
+@white:							#fff;
+
+// Barvy specificke pro Aero
+@grey:							#4e4e4e;   // Sedive pozadi - napr. radek programove tabulky
+@greyDark:					#333;   // Tmave sedive pozadi - treba dlazdice na titulce
+@greyDarkest:				#111111;
+@greenDark:					#008e6e; // Hover na radek tabulky
+@greenDarker:				#004b52; // Radek tabulky
+@greenDarkest:			#003039; // pozadi tile
+
+// TODO pozadi tiles se zmenilo na greenDarker (80%)
+@greenLight:				#b3e3d9; // Napr. Pozadi tiles
+
+@azurDark:					#001d21; // tmavy blok list
+@green:							#36af00;
+
+// Obecne reusable barvy
+@bodyBackgroundColor:		@greenDarkest;
+@bodyColor:							@white;
+
+@textColor:					@white;
+@linkColor:					@green;
+
+
+// Typografie
+@baseLineHeight:		19px;
+@baseFontFamily:		"Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// NAVIGACE
+// --------------------------------------------------
+
+// Nav
+@navBaseColor:					@white;
+@navBaseColorFallback:  @white;
+@navBaseColorHover:			@linkColor;
+
+// Nav main
+@navMainColor:					@linkColor;
+@navMainColorFallback:	@linkColor;
+@navMainColorHover:			@greenDark;
+@navMainColorActive:		@white;
+
+// PROMENNE MODULU
+// --------------------------------------------------
+
+// Titulek
+@pageSubtitleColor:							fade(@white, 50%);
+@pageSubtitleColorFallback:			darken(@white, 50%);
+
+// First time box
+@ftb_color:           @greyDark;
+@ftb_strong_color:    @linkColor;
+@ftb_border_color:    #e9edec;
+
+// Vyhledavaci pole
+@searchBackground:				@greenDarker;
+@searchColor:							darken(@white, 22%);
+@searchColorInverse:			@black;
+
+@searchResultsBackground:		@white;
+@searchResultsColor:				@greenDarker;
+@searchResultsColorHover:		@greenDarker;
+@searchResultsHover:				#d7efcc;
+@searchResultsBorder:				#d0dedf;
+
+@searchFieldBackground:		@white;
+@searchFieldColor:				@black;
+
+// Taby
+@tabColor:								@white;
+@tabBg:										@linkColor;
+@tabBgFallback:						@linkColor;
+@tabHoverColor:						@white;
+@tabHoverBg:							@greenDark;
+@tabHoverBgFallback:			@greenDark;
+@tabActiveColor:					@greenDarkest;
+@tabActiveBg:							@white;
+@tabBorderColor:					@white;
+
+@tabWidgetColor: 					@white;
+@tabWidgetBg: 						@linkColor;
+@tabWidgetBgFallback: 		@linkColor;
+
+// Dropdown
+@dropdownColor:						#273632;
+@dropdownItemHover:				@searchResultsHover;
+@dropdownToggleColor:				darken(@white, 25%);
+@dropdownToggleBg:					@greenDarker;
+@dropdownToggleBgFallback:	@greenDarker;
+@dropdownToggleBgHover:			@greenDark;
+@dropdownItemBorder:      #e6e6e6;
+
+.tab_colors() {
+	color: @white;
+	background-color: fade(@linkColor,25%);
+}
+
+.tab_active_colors() {
+	color: @white;
+	background-color: fade(@greyDarkest, 25%);
+}
+
+.tab_hover_colors() {
+	background-color: fade(@linkColor,50%);
+}
+
+.tab_border_colors() {
+	border-color: fade(@greyDarkest, 50%);
+}
+
+.tab_widget_colors() {
+	background: darken(@linkColor, 10%);
+	background-color: fade(@linkColor,75%);
+}
+
+// Tagy
+@tagColor:									@white;
+@tagHoverColor:							@greenDark;
+@tagDisabledColor:					fade(@white, 75%);
+@tagDisabledColorFallback:	#cfdcde;
+
+// Cykly
+@cycleIconBg:								@linkColor;
+@cycleIconBgFallback:  			@linkColor;
+@cycleIconBgHover:					@white;
+@cycleIconBgHoverFallback:  @white;
+
+// Programova tabluka
+@tableLinkColor:			@white;
+@tableColor:					@white;
+@prgTableBg:					fade(@greenDarker, 80%);
+@prgTableBgFallback:	@greenDarker;
+@prgTableBgHover:			fade(@greenDark, 80%);
+@prgTableBgHoverFallback:	@greenDark;
+@prgWidgetColor:			@greyDarkest;
+@prgWidgetBg:					@white;
+@prgWidgetBgFallback:	@white;
+@prgWidgetBgHover:		#c4e5dd;
+
+// Dlazdicovy seznam
+@tilesBgColor: 							fade(@greenDarker, 80%);
+@tilesBgColorFallback: 			@greenDarker;
+@tileBgColor: 							@greenDarkest;
+@tileBgHoverColor: 					darken(@greenDarkest, 5%);
+@tileDateColor: 						@white;
+@tileDateBgColor: 					@greenDark;
+@tileListBgColor: 					@tilesBgColor;
+@tileListBgColorFallback:		@tilesBgColorFallback;
+@tileListBgRadio1Color:			darken(@tileListBgColor, 7%);
+
+// Dlazdicovy seznam: Navigace po polozkach vicenasobnych dlazdic (Novinky, Udalosti)
+@tileNavColor:				@linkColor;
+@tileNavColorFallback:@linkColor;
+@tileNavBg:						@tileBgColor;
+@tileNavHoverColor:   @white;
+
+// Dlazdicovy seznam: Navigace s inversni paletou (bile pozadi)
+@tileNavInvColor:       @greenDark;
+@tileNavInvActive:      @linkColor;//todo
+
+// Datepicker
+@datepickerColor:	@white;
+@datepickerBorder:	rgba(255,255,255,0.25);
+
+// Inverzni list (v dlazdicich)
+@InverseListBgColor:	fade(@greyDark, 10%);
+@InverseListHover:		fade(@linkColor, 25%);
+@InverseListColor:		@linkColor;
+
+// List
+@listColor:							@bodyColor;
+@listBorderColor:				@tileBgColor;
+@listBgHover:						fade(@linkColor, 25%);
+@listBgHoverFallback:		darken(@linkColor, 10%);
+@listColorActive:			  @linkColor;
+@listInvColor:					@linkColor;
+@listInvBg:							@tileBgColor;
+@listInvBgFallback:			@tileBgColor;
+@listInvBgActive:				darken(@greenDarker, 5%);
+
+// Tooltip
+@tooltipColor:					@black;
+@tooltipBg:							@white;
+
+// Carousel (fotky)
+@carouselBg:            lighten(desaturate(@linkColor, 55%), 55%);
+
+// Text box
+@textBoxBg:             @greenDarkest;
+
+// STRANKY
+// --------------------------------------------------
+
+// Detail filmu
+@contentBg:									fade(@greenDarker, 80%);
+@contentBgFallback:					@greenDarker;
+@contentBgHover:						fade(@greenDarker, 85%);
+@contentBgHoverFallback:		lighten(@greenDarker, 5%);
+
+// Terryho ponozky
+@productColor:							@white;
+@productHeadColor:					fade(@white,50%);
+@productHeadColorFallback:	lighten(@white,50%);
+@productHeadColorHover:			@white;
+@productsBg:								fade(@greenDark, 25%);
+@productsBgFallback: 				@greenDarker;
+@productsItemHover:					@greenDark;
+
+// Detail filmu: Navigace pod fotkou
+@navMovieColor:							@tabColor;
+@navMovieBg:								fade(@greenDark, 50%);
+@navMovieBgFallback:				darken(@greenDark, 2%);
+@navMovieHoverColor: 				@tabHoverColor;
+@navMovieHoverBg: 					@greenDark;
+@navMovieHoverBgFallback: 	@greenDark;
+
+// Detail filmu: odkazy na CSFD/IMDb a spol.
+@chartColor:								@white;
+@chartRowBg:								@greenDarkest;
+@chartRowBgFallback:				@greenDarkest;
+@chartRowBgHover:						lighten(@greenDarker, 3%);
+@chartRowBgHoverFallback:		lighten(@greenDarker, 4%);
+@chartBarBg:                @tabBg;
+@chartBarHoverBg:           @tabHoverBg;
+@chartValueColor:           @white;
+
+// Detail cyklu
+@infoBackground:	@white;
+@infoColor:			@black;
+
+// Prazdna plocha namisto nepritomneho obrazku
+@substImageBg:										fade(@white, 10%);
+@substImageBgFallback:						lighten(desaturate(@greenDarker, 40%), 2%);
+@substImageBgInverted:						fade(@black, 10%);
+@substImageBgInvertedFallback:		darken(@white, 5%);

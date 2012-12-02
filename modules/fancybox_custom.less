@@ -1,0 +1,113 @@
+// Nase rozsireni Fancyboxu
+// -------------------------------------------------
+
+// Pryc s rolovatkem na Windows
+.fancybox-lock .fancybox-overlay {
+	overflow: hidden;
+}
+
+// Varianta s bilym pozadim
+.fancybox_white {
+
+  .fancybox-skin {
+    background: #fff;
+    .border-radius(8px);
+    .box-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+  }
+
+  &.fancybox-opened .fancybox-outer {
+    .box-shadow(0 0 0);
+  }
+
+}
+
+// Nas vzhled zaviraciho tlacitka
+.fancybox-close {
+	position: fixed;
+	right: 22px;
+	top: 24px;
+	width: 47px;
+	height: 47px;
+	.at2x('../img/fancybox_close.png?2', 100%, auto);
+	background-position: top left;
+	cursor: pointer;
+	z-index: 1108;
+	.opacity(.5);
+
+	&:hover,
+	&:focus,
+	&:active {
+		.opacity(1);
+	}
+
+}
+
+
+// Nas vzhled pro strankovani dopredu a dozadu
+.fancybox-prev,
+.fancybox-next {
+  position: fixed;
+  bottom: 0px;
+  height: 100%;
+  width: 35%;
+  cursor: pointer;
+  outline: none;
+  background-image: url('../img/blank.gif');
+  z-index: 1107;
+
+	& span {
+		visibility: visible;
+	  position: absolute;
+	  top: 50%;
+	  width: 48px;
+	  height: 75px;
+	  margin-top: -24px;
+	  cursor: pointer;
+	  z-index: 1107;
+	  display: block;
+	  background-repeat: no-repeat;
+	  background-position: top left;
+	}
+
+}
+
+.fancybox-prev {
+  left: 0px;
+
+	& span {
+	  .at2x('../img/fancybox_left.png', 100%, auto);
+	  .opacity(.5);
+	}
+
+	&:hover span,
+	&:focus span,
+	&:active span {
+	  .opacity(1);
+	}
+
+}
+
+.fancybox-next {
+  right: 0px;
+
+	& span {
+	  .at2x('../img/fancybox_right.png', 100%, auto);
+	  .opacity(.5);
+	}
+
+	&:hover span,
+	&:focus span,
+	&:active span {
+	  .opacity(1);
+	}
+
+}
+
+.fancybox-overlay {
+  background: url('../img/fancybox_overlay.png?1');
+}
+
+
+
+
+

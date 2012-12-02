@@ -1,0 +1,102 @@
+/*
+   Stylopis pro kino Aero
+
+   A) Import parametru pro Aero
+   B) Import mixinu
+   C) Base styly pro vsechna kina
+   D) Vyjimky pro Biooko
+
+*/
+
+// A) Import parametru pro Aero
+// --------------------------------
+@import "parametry_aero";
+
+// B) Import mixinu
+// --------------------------------
+@import "mixin";
+
+// C) Base styly pro vsechna kina
+// --------------------------------
+
+// Minimalni reset a zakladni typografie
+@import "core/global";
+
+// Tiskove styly
+@media print {
+  @import "print"; // zkraceny zapis @import "core/print" print; bohuzel LESS neumi
+}
+
+// Obrazovkove styly
+@media screen {
+  //@import "core/forms";
+  @import "core/type";
+  @import "core/icons";
+  @import "core/animation";
+  @import "core/utility";
+
+  // Layout webu
+  @import "core/layout";
+  @import "modules/navigation";
+
+  // Moduly
+  @import "modules/tabs";                 // Modul: Taby
+  @import "modules/tabs_simple";          // Modul: Zjednodusene taby
+  @import "modules/tabs_pills";           // Modul: Taby jako tlacitka
+  @import "modules/pagination";           // Modul: Strankovani
+  @import "modules/dropdown";             // Modul: Dropdown
+  @import "modules/search";               // Modul: Vyhledavani
+  @import "modules/chart";                // Modul: CSS grafy
+  @import "modules/products";             // Modul: Produkty
+  @import "modules/page_title";           // Modul: Page title
+  @import "modules/table_program";        // Modul: Programova tabulka
+  @import "modules/table_program_widget"; // Modul: Programova tabulka v detailu
+  @import "modules/age_icon";             // Modul: Ikonka veku v programove tabulce
+  @import "modules/cycle_icon";           // Modul: Ikonka cyklu na konci radku
+  @import "modules/tiles";                // Modul: Dlazdice
+  @import "modules/cycles";               // Modul: Cykly (rozsiruje dlazdice)
+  @import "modules/lists";                // Modul: Seznamy
+  @import "modules/datepicker";           // Modul: Datepicker
+  @import "modules/tooltip";              // Modul: Bootstrap Tooltip
+  @import "modules/filters";              // Modul: Filtry
+  @import "modules/media_box";            // Modul: Media Box
+  @import "modules/first_time_box";       // Modul: First Time box
+  @import "modules/carousel";             // Modul: Carousel (bootstrap)
+  @import "modules/carousel_custom";      // Modul: Carousel (rozsireni bootstrapu)
+  @import "modules/grid";                 // Modul: Grid (pravidelna mrizka)
+  @import "modules/text_box";             // Modul: Text box
+
+  // Stranky
+  @import "pages/movie_detail";
+  @import "pages/cycle_detail";
+  @import "pages/contact";
+  @import "pages/bar";
+
+	// Fancybox
+	@import "jquery.fancybox";
+	@import "jquery.fancybox-thumbs";
+  @import "modules/fancybox_custom";      // Modul: Fancybox (extension)
+
+}
+
+// Obrazovkove styly pro velke displeje (vice nez 1210px)
+@media screen and (min-width: 1210px) {
+  @import "rwd/large_screen";
+}
+
+// Obrazovkove styly pro mensi displeje (mene nez 1210px)
+@media screen and (max-width: 1209px) {
+  @import "rwd/small_screen";
+}
+
+// Korekce pozicovani pro mobilni zarizeni (predpokladame mensi rozliseni, iOS position:fixed zvlada)
+@media screen and (max-width: 640px) {
+  #logo, #nav {
+    position: absolute;
+  }
+}
+
+// D) Vyjimky pro Aero
+// ----------------------------------
+@import "themes/aero";
+

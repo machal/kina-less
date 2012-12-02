@@ -1,0 +1,188 @@
+//  Tema pro univerzalni vzhled kina
+// ----------------------
+
+// Typografie a barvy
+// ==============================================================================
+
+
+// Nadpisy maji trochu jine barvy
+
+h1, h2, h3 {
+	color: @white;
+	font-weight: bold;
+	letter-spacing: -0.03em;
+}
+
+#container .f_custom {
+  font-family: @baseFontFamily;
+  font-weight: bold;
+}
+
+// Tiskove styly
+// ==============================================================================
+
+@media print {
+
+
+} // @media print
+
+
+// Obrazovkove styly
+// ==============================================================================
+
+@media screen {
+
+	// Obrazek na pozadi
+	body {
+		background-image: url('../img/uni/bg.jpg');
+	}	
+
+	// --- Odkaz poprve u nas ---
+	
+	.home_first a {
+		font-weight: normal;
+	}
+
+  // --- Navigace ---
+
+  #nav {
+    top: 182px;
+
+		a {
+				font-weight: bold;	
+				letter-spacing: -0.03em;
+		}
+  }
+
+	.nav_secondary > li > .item {
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	// --- Aeropolis navigace ---
+	
+	#projects ul .item {
+		font-weight: normal;
+	}
+
+  // --- Terryho ponozky ---
+  #terryGoods h2 {
+		a {
+			font-weight: bold;			
+		}
+  }
+
+  // --- Modul Page Title ---
+  .page_title h1 {
+    .age_icon {
+      position: relative;
+      top: -3px;
+    }
+  }
+
+  .page_title.inline .subhead {
+    top: -12px;
+  }
+
+  // --- Zalozky ---
+
+  .tabs {
+		font-weight: bold;
+		letter-spacing: -.03em;
+		
+		a {
+			font-weight: bold;
+		}		
+	}
+	
+	// Navigace napric kiny
+	.tabs.tabs_pills a {
+		font-weight: normal;
+	}
+
+
+  // --- Programova tabulka ---
+
+  .prg_table { 	
+		.col_movie_name {
+	    padding-top: 3px;
+	  }
+	
+		.param_icon {
+		  .at2x('../img/prg_table_param_icons_gray.png?3', 100%, auto);
+		}		
+	}
+
+	.prg_row:hover,
+	.prg_row:focus,
+	.prg_row:active {
+		.name, .plus {
+	  	color: @grayDark;			
+		}
+	}
+	
+	.prg_widget .param_icon {
+	  .at2x('../img/prg_table_param_icons_gray.png', 100%, auto);
+	}	
+
+
+  // --- Modul Tiles ---
+	
+	.tile {
+		.head {
+			font-weight: bold;
+		}
+		
+		.caption {
+			background-color: @grayLight;
+		}		
+	}
+
+	.tile.cycle,
+	.tile.festival {
+		// Obrazek ma na pozadi barvu
+		// hlavne kvuli defaultnim obrazkum u cyklu, ktere jsou v bilem textu
+		.image {
+			background-color: lighten(@gray, 30%);
+		}				
+	}
+
+
+	// --- CSFD atd. hodnoceni v detailu filmu ---
+	
+	.movie_ratings h2 {
+		color: @gray;
+	}
+	
+	
+	// --- Cykly a festivaly ---
+	
+	.cycle_box_content {
+		background: lighten(@gray, 10%);
+		background: fade(@gray, 85%);
+		color: @white;
+	}
+	
+	// --- Kontakty ---
+	
+  .nav_contacts {
+    .tab {
+      color: @gray;
+      .at2x('../img/contact_icons.png?2', 398px, 90px);
+    }
+
+    .icon_tip:before {
+      .at2x('../img/contact_icons.png?2', 398px, 90px);
+    }
+
+		.tab .tab_header {
+			.opacity(1);
+		}
+
+  }	
+
+
+
+} // @media screen
+
+

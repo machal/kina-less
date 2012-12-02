@@ -1,0 +1,282 @@
+//   D) Vyjimky pro Bio Oko
+// ----------------------
+
+// --- Typoska - Vafle Egyptienne ---
+
+// Suitcase varianta (nepouzivame)
+@font-face {
+  font-family: 'Vafle Egyptienne';
+  src: url('fonts/vafle-egyptienne.eot?#iefix') format('embedded-opentype'),  // IE6–8
+       url('fonts/vafle-egyptienne.woff') format('woff'),  // FF3.6+, IE9, Chrome6+, Saf5.1+
+       url('fonts/vafle-egyptienne.svg#vafle-egyptienne') format('svg');
+}
+
+// Font Squirrel varianta
+@font-face {
+    font-family: 'VafleEgyptienneRegular';
+    src: url('fonts/vafle_egyptienne-webfont.eot');
+    src: url('fonts/vafle_egyptienne-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/vafle_egyptienne-webfont.woff') format('woff');
+}
+
+body .f_custom {
+  font-family: 'VafleEgyptienneRegular', serif;
+  font-weight: normal;
+  font-weight: normal !important;
+  font-style: normal !important;
+}
+
+
+// ==============================================================================
+// B) Tiskove styly
+
+
+@media print {
+
+
+} // @media print
+
+
+
+// ==============================================================================
+// C) Obrazovkove styly
+
+@media screen {
+
+
+  // --- Obecna pravidla ---
+
+  // Pozadi stranky pro OKO
+  body {
+    background-image: url('../img/biooko/body_bg.gif?3');
+    background-repeat: repeat-x;
+    background-position: top left;
+    background-attachment: fixed;
+  }
+
+  // Odkazy v blokovych elementech maji po hoveru opacnou barvu
+
+  a.block_anchor:hover .head,
+  a.block_anchor:focus .head,
+  a.block_anchor:active .head {
+    color: @greenSaturated;
+  }
+
+  // Podtitulek
+  .subhead a {
+    font-weight: normal;
+  }
+
+  // --- Navigace ---
+
+  // Interaktivni logo - na hover se objevuje jina varianta
+
+  #logo a .normal,
+  #logo a .interact {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+
+  #logo a .interact {
+    display: none;
+  }
+
+  #logo a:hover .normal,
+  #logo a:focus .normal,
+  #logo a:active .normal {
+    display: none;
+  }
+
+  #logo a:hover .interact,
+  #logo a:focus .interact,
+  #logo a:active .interact {
+    display: block;
+  }
+
+  // --- Page Title ---
+  .page_title.inline .subhead {
+    top: -10px;
+  }
+
+  .page_title.with_bottom_border {
+    border: 0;
+    margin-bottom: 0;
+  }
+
+  .age_icon {
+    .opacity(1);
+  }
+
+
+  // --- Hlavni navigace ---
+  #nav {
+    top: 167px;
+  }
+
+  #nav_lang a {
+    color: @black;
+  }
+
+  .search_results .item:hover .head {
+    color: @linkColor;
+  }
+
+
+
+  .search_field {
+    .search_input {
+      color: @black;
+    }
+    .search_input::-webkit-input-placeholder {
+      color: lighten(@black, 10%);
+    }
+    .search_input:-moz-placeholder {
+      color: lighten(@black, 10%);
+    }
+    .search_input:-ms-input-placeholder {
+      color: lighten(@black, 10%);
+    }
+  }
+
+
+
+  // --- Programova tabulka ---
+  .prg_table .sentence {
+    .opacity(1);
+  }
+
+  // Typoska - zde jinak velky nazev predstaveni
+  .prg_table .name {
+    font-size: 22px;
+  }
+
+  .prg_row:hover .name {
+      color: @greenSaturated;
+    }
+
+
+  // Predstaveni jiz probehlo
+  .prg_table .s_show_finished {
+
+    .reservation_icon {
+    color: @white;
+  }
+
+  .name,
+    .sentence   {
+      color: @bodyColor;
+  }
+
+  }
+
+
+  .prg_row:hover .cycle_icon .arrow,
+  .prg_row:focus .cycle_icon .arrow,
+  .prg_row:active .cycle_icon .arrow {
+    background-position: -16px 0;
+  }
+
+  // --- Terryho ponozky ---
+  #terryGoods h2 {
+    font-size: 20px;
+  }
+
+
+  // --- Boxiky na titulce ---
+  .tile_nav .active .tile_nav_item .tab_header {
+      color: @linkColor;
+  }
+
+  // urceno pro probehle udalosti
+  .tile .caption_inner {
+    color: lighten(@black, 25%);
+  }
+
+
+  // --- Modul nadpis druhe urovne ---
+
+  .heading_2 {
+    border-color: @bodyColor;
+  }
+
+
+  // --- Modul Drowpdown ---
+  // korekce barvy
+
+  .dropdown .caret {
+    background-position: 0 -12px;
+  }
+
+  .nav_top .dropdown-toggle,
+  .nav_top .dropdown-toggle:hover {
+    color: lighten(@black, 50%);
+  }
+
+  .nav_contacts {
+    .tab {
+      color: @black;
+      .at2x('../img/contact_icons.png?2', 398px, 90px);
+    }
+    .icon_tip:before {
+      .at2x('../img/contact_icons.png?2', 398px, 90px);
+    }
+  }
+
+  // Detail filmu
+  .movie_image .tab_top {
+    font-weight: bold;
+    color: @greenSaturated;
+    background: @blueLight;
+
+    &:hover {
+      color: @linkColor;
+      background: @greenLight;
+    }
+  }
+
+  .icon_facebook {
+    .opacity(1);
+  }
+  .icon_preview {
+    background-position: 0 0;
+  }
+
+  .list.grid .active .list_item {
+    color: @linkColor;
+  }
+
+
+} // @media screen
+
+// ==============================================================================
+//  E) Obrazky ve dvou rozlisenich
+//  - Obrazky je nutne nacitat mimo media query, protoze mixin at2x pouziva media query s pixel-density
+
+.loading  {
+  background-image: url('../img/loading_black.png');
+}
+
+.age_icon {
+  .at2x('../img/age_icons_dark.png', 100%, auto);
+}
+
+.prg_table .param_icon {
+  .at2x('../img/prg_table_param_icons_dark.png?2', 100%, auto);
+}
+
+.cycle_icon .arrow {
+  background-size: auto 100%;
+  .opacity(1);
+}
+
+.dropdown-toggle .icon_svetozor,
+.dropdown-toggle .icon_biooko,
+.dropdown-toggle .icon_aero {
+  .at2x('../img/movie_icons.png?1', 100%, auto);
+}
+
+.icon_facebook {
+  background-position: 0 -21px;
+}

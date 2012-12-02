@@ -1,0 +1,42 @@
+
+// PAGE TITLE
+// Titulek stranky s ruznymi variantami. Kombinovani s inline textem a podtitulkem
+// -------------------------------------------------------
+
+.page_title {
+  position: relative;
+  padding-bottom: 22px;
+
+  h1 {
+    font-weight: normal;
+    font-size: 43px;
+    line-height: 43px;
+    margin: 0;
+  }
+
+}
+
+// Varianta s inline nadpisem
+.page_title.inline {
+
+  .head {
+    display: inline-block;
+  }
+
+  .subhead {
+    display: inline-block;
+    position: relative;
+    top: -6px;
+    left: 6px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1;
+  }
+
+ }
+
+// Podtitulek (napr. v detailu filmu)
+.page_subtitle {
+  color: @pageSubtitleColorFallback;
+  color: @pageSubtitleColor;
+}

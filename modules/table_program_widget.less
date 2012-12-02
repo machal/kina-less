@@ -1,0 +1,51 @@
+// Table_program_widget.less
+// Program Widget (maly)
+// --------------------------
+
+.prg_widget {
+  //table-layout: fixed;
+  border-spacing: 0 2px;
+  margin-top: -2px;
+}
+
+.prg_widget td {
+  color: @prgWidgetColor;
+  background: @prgWidgetBgFallback;
+  background: @prgWidgetBg;
+  width: auto;
+}
+
+.prg_widget .col_day {
+  padding-left: 15px;
+  width: 65px;
+}
+
+.prg_widget .col_date {
+  // width: 65px;
+}
+
+.prg_widget .col_cycle {
+  width: 39px;
+}
+
+.prg_widget .col_price {
+  width: 40px;
+}
+
+.prg_widget .hall_icon {
+  .at2x('../img/prg_table_hall.png?2', 100%, auto);
+  background-repeat: no-repeat;
+}
+
+.prg_widget .prg_row:hover td,
+.prg_widget .prg_row:focus td,
+.prg_widget .prg_row:active td,
+.prg_widget .prg_row:hover th,
+.prg_widget .prg_row:focus th,
+.prg_widget .prg_row:active th {
+  background: @prgWidgetBgHover;
+}
+
+.prg_widget .prg_row.s_with_cycle .col_cycle {
+  background-color: transparent;
+}

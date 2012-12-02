@@ -1,0 +1,87 @@
+// Dropdown.less
+// -------------------------
+
+.dropdown {
+    position: relative;
+  }
+
+
+  .tabs .open .dropdown-toggle,
+  .tabs > li.dropdown.open.active > a:hover,
+  .tabs .dropdown.open > a {
+    color: @dropdownColor;
+    background-color: @white;
+  }
+
+  .tabs .dropdown.open > a {
+    .border-radius(0);
+  }
+
+  .dropdown .dropdown-toggle {
+    color: @dropdownToggleColor;
+    background: @dropdownToggleBg;
+    padding: 0 10px 0 12px;
+
+    &:hover {
+      background: @dropdownToggleBgHover;
+    }
+  }
+
+  .dropdown .caret {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    .opacity(.5);
+    .at2x('../img/icon_dropdown.png', 100%, auto);
+  }
+
+  .open .caret {
+    background-position: 0 -12px;
+  }
+
+  .open > .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    //min-width: 160px;
+    padding: 0 0 10px;
+    margin: 0;
+    list-style: none;
+    background-color: @white;
+    .border-radius(0 0 10px 10px);
+    border-top: 1px solid @dropdownItemBorder;
+  }
+  .dropdown-menu a {
+    display: block;
+    background: @white;
+    padding: 8px 10px 7px 12px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #333;
+    white-space: nowrap;
+    margin: 0;
+    border-bottom: 1px solid @dropdownItemBorder;
+    .border-radius(0);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: @dropdownItemHover;
+      color: @dropdownColor;
+    }
+
+    &.active {
+      font-weight: bold;
+    }
+
+  }

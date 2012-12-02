@@ -1,0 +1,43 @@
+// Cycles.less
+// Modul Cyklus
+// ------------------------------------
+
+.cycle_box {
+	position: relative;
+	height: 360px;
+}
+
+.cycle_box_content {
+  position: absolute;
+	top: 25px;
+	left: 25px;	
+	z-index: 5;
+  background-color: @contentBgFallback;
+  background-color: @contentBg;
+  padding: 15px;
+  width: 317px; // 347
+	height: 275px; // 305
+
+  h2 {
+    font-size: 43px;
+    line-height: 43px;
+  }
+
+	.text {
+		position: absolute;
+		bottom: 25px;
+		left: 15px;
+		padding-right: 20px;
+	}
+	
+	.text > p:last-child {
+		margin-bottom: 0;	
+	}
+
+}
+
+.cycle_box_img {
+  position: absolute;
+	top: 0;
+	left: 0;	
+}

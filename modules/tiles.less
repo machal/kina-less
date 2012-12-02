@@ -1,0 +1,475 @@
+
+// TILES
+// Modul seznam dlazdic (blok se seznamem v zalozkach na uvodni strance, v seznamu cyklu nebo fotogalerii)
+// -----------------------------------
+
+// Seznam dlazdic
+
+.tiles {
+  position: relative;
+  background: @tilesBgColorFallback;
+  background: @tilesBgColor;
+  padding: 26px 0 22px 24px;
+
+  // Na uvodni zalozce posunujeme nize kvuli navigaci pro novinky a udalosti
+  &.tiles_splash {
+    padding-top: 60px;
+  }
+
+  // Posunujeme obsah kvuli pritomnosti filtru (napr. cykly a festival)
+  &.with_filter_right {
+	  padding-top: 77px;
+	}
+	
+  > h2 {
+    font-size: 33px;
+    line-height: 2*@baseLineHeight;
+  }
+
+} //.tiles
+
+
+// Jednotliva dlazdice
+
+.tile {
+  background: @tileBgColor;
+  position: relative;
+  float: left;
+  width: 234px;
+  height: 237px;
+  margin: 0 8px 8px 0;
+  font-size: 12px;
+  line-height: 17px;
+
+	// Nadpis
+	h2 {
+	  font-size: 22px;
+	  line-height: 24px;
+	  margin: 0;
+	  font-weight: normal;
+	  color: @bodyColor;
+	}
+
+	h2 a strong {
+	  font-weight: normal;
+	}
+
+	h2 a:hover,
+	h2 a:focus,
+	h2 a:active {
+	  text-decoration: none;
+	}
+
+	p {
+	  margin: 0;
+	}
+
+  // urceno pro probehle udalosti
+  .caption_inner {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    padding: 4px 0;
+    line-height: 17px;
+    text-align: center;
+    width: 100%;
+    background: @white;
+    background: fade(@white, 50%);
+    color: @tileBgColor;
+  }
+
+	// Popisek pod obrazkem
+	// (napr. doba trvani cyklu)
+  .caption {
+    background: @tilesBgColorFallback;
+    background: @tilesBgColor;
+    margin: -6px -7px 7px -8px;
+    text-align: center;
+    padding: 4px 8px;
+    height: 17px;
+  }
+
+	.tile_content {
+	  display: block;
+	  width: 234px; // 234
+	  height: 225px; // 237
+	  padding: 0 0 12px;
+	}
+
+	a.tile_content:hover,
+	a.tile_content:focus,
+	a.tile_content:active {
+	   background: @tileBgHoverColor;
+	}
+
+	// Vnitrni blok dlazdice, nositel rozmeru a paddingu
+	.tile_wrap {
+	  overflow: hidden;
+	  width: 206px; // 234
+	  height: 213px;
+	  padding: 12px 14px 0 14px;
+	}
+
+	.tile_content_wrap {
+	  overflow: hidden;
+	}
+
+	// Obrazek
+	.image {
+	  margin: -6px -7px 6px -8px;
+	  position: relative;
+	  height: 124px;
+	  overflow: hidden;
+	}
+
+	.image img {
+	  max-width: 221px;
+		height: auto;
+	}
+
+	// Placeholder pokud neni obrazek
+	.subst_image {
+	  width: 221px;
+	  height: 124px;
+	}
+
+	// Blok pro nadpis a text
+	// (pouziva se v .tile.rich pro vymizeni obsahu pomoci .hider)
+	.hiding_content {
+	}
+
+} //.tile
+
+// Tile paticka, tmavy blok
+.tile_footer {
+  background: @tileBgColor;
+}
+
+// Ikona pres fotku se signalizaci moznosti prehrat trailer
+
+.play_trailer {
+  text-indent: -5000px;
+  position: absolute;
+  width: 221px;
+  height: 124px;
+}
+
+.play_trailer:hover,
+.play_trailer:focus,
+.play_trailer:active {
+  background-position: 0px -129px;
+}
+
+
+// Slideshow na dlazdicich, ktere maji uvnitr vice elementu - napr. novinky
+// Vsechny jsou naskladane pres sebe. V JS pak aktivni fadujeme napovrch.
+// Neaktivni nejsou videt.
+
+.slideshow .tile_content_wrapper {
+  position: relative;
+  width: 234px;
+  height: 237px;
+  overflow: hidden;
+}
+
+.slideshow.news .tile_content_wrapper .tile_content {
+  margin: 0 0 12px;
+  padding: 0;
+}
+
+// Navigace pro dlazdice, kterych je vice na jedne pozici - napr. novinky
+
+.tile_nav {
+  position: absolute;
+  left: 0;
+  top: -32px;
+  height: 32px;
+  padding: 0 7px 0 7px;
+  max-width: 230px; // max. 8 polozek
+  overflow: hidden;
+  background: @tileNavBg;
+  .border-radius(8px 8px 0 0);
+}
+
+.tile_nav_item {
+  display: inline-block;
+  float: left;
+  width: 27px;
+  height: 32px;
+  margin-bottom: 2px;
+  font-size: 21px;
+  line-height: 32px;
+  text-align: center;
+  font-weight: normal;
+
+  color: @tileNavColorFallback;
+  color: @tileNavColor;
+}
+
+.tile_nav_item:hover,
+.tile_nav_item:focus,
+.tile_nav_item:active  {
+  .opacity(1);
+  text-decoration: none;
+  color: @tileNavHoverColor;
+}
+
+.tile_nav_item.s_active  {
+  .opacity(1);
+  cursor: default;
+  color: @tileNavHoverColor;
+}
+
+// Varianta - inverzni navigace s bilym pozadim
+// ----------------------------
+
+.tile_nav.inverse {
+  position: absolute;
+  left: auto;
+  top: 22px;
+  right: 25px;
+
+  background: @white;
+}
+
+.tile_nav.inverse .tile_nav_item {
+  color: @tileNavInvColor;
+  .opacity(1);
+  font-size: 26px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: @tileNavInvActive;
+  }
+
+}
+
+.tile_nav .tab_header {
+  color: @tileNavInvColor;
+}
+
+.tile_nav .active .tile_nav_item {
+  color: @tileNavInvActive;
+}
+
+// - Varianta dlazice s bohatsim obsahem a popiskem pod fotkou -
+// (pro cykly, festivaly a fotogalerii)
+//
+// <div class="tile rich">
+//  <a href="#" class="tile_content block_anchor">
+//    <div class="tile_wrap">
+//      <p class="image">
+//        <span class="subst_image"></span>
+//      </p>
+//      <div class="caption"></div>
+//      <div class="hiding_content">
+//        <h2 class="f_custom">
+//          <strong class="head"></strong>
+//        </h2>
+//        <p></p>
+//        <hr class="dumb_only">
+//    	</div><!-- .hiding_content -->
+//    </div><!-- .tile_wrap -->
+//  </a><!-- .tile_content -->
+// </div><!-- .tile -->
+
+.tile.rich {
+  height: 320px;
+
+  h2 {
+    margin-bottom: @baseLineHeight / 2;
+  }
+
+  .tile_content {
+    height: 308px;
+  }
+
+  .tile_wrap {
+    height: 290px;
+  }
+
+} // .tile.rich
+
+
+// - Varianta dlazice s bohatsim obsahem, ale bez anotace -
+// (pro fotogalerii)
+
+.tile.rich.without_perex {
+  height: 280px;
+
+  .tile_content {
+    height: 268px;
+  }
+
+}
+
+// - Varianta: novinky -
+
+.tile.news h2 {
+  margin-bottom: 20px;
+}
+
+// - Varianta: hudba pred filmem -
+
+.tile.music {
+	h2 {
+	  float: left;
+		margin-bottom: 29px;
+	}
+}
+
+.tile .date {
+  color: @tileDateColor;
+  background: @tileDateBgColor;
+  position: relative;
+  top: -3px;
+  font-weight: bold;
+  float: right;
+  padding: 0 5px;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 30px;
+  .border-radius(4);
+}
+
+.tile.music .preparing {
+  position: relative;
+  top: -30px;
+  float: right;
+  display: inline-block;
+  font-size: 11px;
+}
+
+// - Varianta: predfilm -
+
+.tile.starter {
+}
+
+.tile.starter h2 {
+  float: left;
+  width: 120px;
+  margin-bottom: 30px;
+}
+
+.tile.starter .text {
+  margin: 0;
+  width: 206px;
+  height: 153px;
+  overflow: hidden;
+}
+
+// - Varianta: pripravujeme -
+
+.tile.preparing {
+
+	h2 {
+	  margin-bottom: 20px;
+	}
+
+	.hider {
+		bottom: 24px;
+	}
+}
+
+// - Varianta: udalosti -
+
+.tile.event {
+
+	h2 {
+		max-height: 48px;
+		overflow: hidden;
+	}
+
+	.hider {
+		bottom: 24px;
+	}
+
+}
+
+// - Varianta: predfilm -
+
+.tile.supporting_movie {
+
+	h2 {
+	  margin-bottom: 5px;
+	}
+
+	.hider {
+		#gradient > .vertical(fade(@tileBgColor, 0%), @tileBgColor);
+		background-color: transparent;
+		width: 220px;
+	}
+}
+
+// --- Blok pro vysedeni dlouheho obsahu dlazdice ---
+
+.tile .hider {
+  display: none;
+  width: 200px;
+  height: 26px;
+  position: absolute;
+  bottom: 12px;
+  right: 10px;
+  #gradient > .horizontal(fade(@tileBgColor, 0%), @tileBgColor);
+	background-color: transparent;
+}
+
+.long_text .hider {
+  display: block;
+}
+
+a.tile_content:hover .hider,
+a.tile_content:focus .hider,
+a.tile_content:active .hider {
+  #gradient > .horizontal(fade(@tileBgHoverColor, 0%), @tileBgHoverColor);
+	background-color: transparent;
+}
+
+// Varianta pro .tile.rich kde se vyseduje blok s nadpisem a textem
+
+.tile .hiding_content + .hider {
+  #gradient > .vertical(fade(@tileBgColor, 0%), @tileBgColor);
+	background-color: transparent;
+	width: 210px;
+}
+
+.tile.rich .hiding_content + .hider {
+	bottom: 17px;
+}
+
+.tile a.tile_content:hover .hiding_content + .hider,
+.tile a.tile_content:focus .hiding_content + .hider,
+.tile a.tile_content:active .hiding_content + .hider {
+  #gradient > .vertical(fade(@tileBgHoverColor, 0%), @tileBgHoverColor);
+	background-color: transparent;
+}
+
+// Aerovod
+.tile.aerovod {
+  background: transparent;
+  .tile_wrap {
+    height: 183px;
+  }
+  .tile_content {
+    background: @tileBgColor;
+    height: 183px;
+    margin-bottom: 2px;
+  }
+  .tile_footer a {
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    color: @bodyColor;
+    font-weight: normal;
+
+    &:hover {
+      text-decoration: none;
+      background: @tileBgHoverColor;
+    }
+  }
+  .hider {
+    bottom: 54px;
+  }
+}

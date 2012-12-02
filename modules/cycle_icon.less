@@ -1,0 +1,50 @@
+// Cycle_icon.less
+// Modul Ikona cyklu (v programovych tabulkach na konci radku)
+// -------------------------------------------
+
+.cycle_icon {
+  position: absolute;
+  white-space: nowrap;
+  color: @tagColor;
+}
+
+.cycle_icon:hover,
+.cycle_icon:focus,
+.cycle_icon:active {
+  text-decoration: none;
+  color: @tagHoverColor;
+}
+
+.cycle_icon .cycle_name   {
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 1px;
+  height: 25px;
+  line-height: 25px;
+  padding-right: 7px;
+  max-width: 250px;
+  .text-overflow();
+  .border-radius(0 5px 5px 0);
+  background: @cycleIconBgFallback;
+  background: @cycleIconBg;
+}
+
+// Plny nazev zobrazujeme jen na sirsich displejich
+.cycle_icon .full_name {
+  display: none;
+  font-weight: normal;
+}
+
+.cycle_icon .shortcut {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.prg_row:hover .cycle_icon .cycle_name,
+.prg_row:focus .cycle_icon .cycle_name,
+.prg_row:active .cycle_icon .cycle_name     {
+  background: @cycleIconBgHoverFallback;
+  background: @cycleIconBgHover;
+  color: @tagHoverColor;
+}

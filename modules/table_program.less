@@ -1,0 +1,348 @@
+// Table_program.less
+// Programova tabulka
+// ------------------------
+
+// TODO refaktorovat (MS 8.8.2012)
+
+.prg_table {
+    border-spacing: 0 3px;
+    width: 100%;
+  }
+
+  #page_home .prg_table {
+    margin-bottom: @baseLineHeight * 2;
+  }
+
+  .prg_table td {
+    vertical-align: top;
+    height: 30px;
+    .box-sizing(content-box);
+    white-space: nowrap;
+    padding: 4px 0 0 0;
+    border: 0;
+    margin: 0;
+    background: @prgTableBgFallback;
+    background: @prgTableBg;
+    //.background-size(41px auto);
+    //.better-image-rendering();
+  }
+
+  .prg_table .col_day {
+    padding-left: 15px;
+  }
+  .prg_table .day {
+    th {
+        padding-top: @baseLineHeight;
+    }
+    &:first-child th {
+      padding-top: 0;
+    }
+    .heading_2 {
+      margin-bottom: 5px;
+    }
+
+  }
+
+  .prg_table acronym {
+    border: none;
+  }
+
+  // Ikonka salu (prvni sloupec ve velke tabulce)
+  // - jen pro vicesalova kina jako Svetozor
+
+  .prg_table.multiple_halls .col_hall {
+    width: 38px;
+    display: table-cell;
+  }
+
+  .prg_table .hall_icon {
+    text-indent: -5000px;
+    display: block;
+    margin: 0 0 0 5px;
+    width: 33px;
+    height: 26px;
+    .opacity(.5);
+    .at2x('../img/prg_table_hall_white.png?12', 100%, auto);
+    background-repeat: no-repeat;
+  }
+
+  .prg_table .hall_icon.big_hall {
+    background-position: 0px -26px;
+  }
+
+  // Cas a ikonka rezervace (druhy sloupec ve velke programove tabulce)
+
+  .prg_table .col_time_reservation {
+    width: 75px;
+    padding-left: 5px;
+  }
+
+  .prg_table.multiple_halls .col_time_reservation {
+    padding-left: 0;
+  }
+
+  .prg_table .reservation_icon {
+    display: block;
+    width: 57px; /* 68 */
+    text-align: right;
+    padding-right: 11px;
+    height: 26px;
+    line-height: 26px;
+    font-weight: bold;
+    color: @tagColor;
+    .at2x(e(%("../img/%d/program_reservation.png?24", @imagesFolder)), 100%, auto);
+    background-position: 0px -26px;
+    background-repeat: no-repeat;
+  }
+
+  .prg_table .reservation_icon:hover,
+  .prg_table .reservation_icon:focus,
+  .prg_table .reservation_icon:active {
+    text-decoration: none;
+    color: @tagHoverColor;
+  }
+
+  /* Sloupec s nazvem filmu a doplnujici vetou */
+
+  .prg_table .col_movie_name {
+    width: 479px;
+    color: @tableColor;
+  }
+
+  .prg_table.multiple_halls .col_movie_name {
+    width: 446px; /* Ve vicesalovych kinech je kratsi o delku .col_hall - 5px co je navic v .col_time_reservation */
+  }
+
+
+  .prg_table .name_and_sentence {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 470px;
+    height: 26px;
+    line-height: 26px;
+  }
+
+  .prg_table .plus {
+    line-height: 26px;
+    font-size: 20px;
+    margin: 0 -2px 0 4px;
+    vertical-align: top;
+  }
+
+  .prg_table .name {
+    margin: 0 0 0 6px;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 26px;
+    height: 26px;
+    color: @tableLinkColor;
+    max-width: 470px;
+    .text-overflow();
+  }
+
+  .prg_table .name:hover,
+  .prg_table .name:focus,
+  .prg_table .name:active {
+    text-decoration: none;
+  }
+
+
+  .prg_table .sentence {
+    position: relative;
+    top: -2px;
+    left: 6px;
+    font-size: 12px;
+    display: inline-block;
+    .opacity(.5);
+  }
+
+  /* Sloupec s ikonami */
+
+  .prg_table .col_param_icons  {
+    padding-top: 3px;
+    padding-right: 5px;
+    min-width: 52px;
+  }
+
+  .prg_table .param_icon {
+    text-indent: -5000px;
+    margin-right: 4px;
+    display: inline-block;
+    font-size: 11px;
+    width: 26px;
+    height: 26px;
+    margin: 0 0 0 2px;
+
+    .at2x('../img/prg_table_param_icons.png?11', 100%, auto);
+    background-repeat: no-repeat;
+    .opacity(.5);
+    .better-image-rendering();
+  }
+
+  .prg_table .param_icon.no_subtitles {
+    width: 32px;
+    .at2x('../img/prg_table_param_orig.png?1', 100%, auto);
+    background-position: 0 3px;
+  }
+
+  .prg_table .param_icon.eng_friendly
+    { background-position: 0 0; }
+  .prg_table .param_icon.hd
+    { background-position: 0 -26px; }
+  .prg_table .param_icon.dvd
+    { background-position: 0 -52px; }
+  .prg_table .param_icon.icon35mm
+    { background-position: 0 -78px; }
+  .prg_table .param_icon.icon4k
+    { background-position: 0 -104px; }
+
+  /* Sloupec s cenou */
+
+  .prg_table .col_price {
+    padding: 4px 5px 0 4px;
+    line-height: 26px;
+    width: 50px; /* 59px */
+    text-align: right;
+  }
+
+  .prg_table .price_anchor {
+    color: @bodyColor;
+    font-weight: normal;
+    font-size: 12px;
+  }
+
+  .prg_table .price_anchor:hover,
+  .prg_table .price_anchor:focus,
+  .prg_table .price_anchor:active {
+    text-decoration: none;
+    border-bottom: 1px dotted @bodyColor;
+  }
+
+  .prg_table.prg_widget .price_anchor {
+    color: @prgWidgetColor;
+  }
+
+  .prg_table.prg_widget td {
+    .better-image-rendering();
+  }
+
+  /* --- Program Full: vsechny sloupce (cykly) --- */
+  .prg_table_full {
+
+  }
+
+  .prg_table_full .col_movie_name,
+  .prg_table_full .name_and_sentence {
+    width: 380px;
+  }
+
+
+  // --- Program Big: velka tabulka s programem ---
+
+  .prg_table_big .col_param_icons {
+    width: 111px;
+  }
+
+  /* Sloupec s textem */
+
+  .prg_table .col_text {
+    padding-right: 10px;
+    line-height: 29px;
+  }
+  /* Sloupec s cyklem/festivalem */
+
+  .col_cycle {
+    width: 41px;
+  }
+
+  /* Sloupec s datumem
+     (v .prg_widget v detailu predstaveni)
+  */
+
+  .col_date {
+    font-weight: bold;
+  }
+
+  /* - Stav: Hover nad radkem s predstavenim co jeste neprobehlo - */
+
+  .prg_row:hover td,
+  .prg_row:focus td,
+  .prg_row:active td,
+  .prg_row:hover th,
+  .prg_row:focus th,
+  .prg_row:active th {
+    background: @prgTableBgHoverFallback;
+    background: @prgTableBgHover;
+  }
+
+  .prg_row:hover .hall_icon,
+  .prg_row:focus .hall_icon,
+  .prg_row:active .hall_icon,
+  .prg_row:hover .param_icon,
+  .prg_row:focus .param_icon,
+  .prg_row:active .param_icon {
+    .opacity(1);
+  }
+
+  .prg_row:hover .reservation_icon,
+  .prg_row:focus .reservation_icon,
+  .prg_row:active .reservation_icon   {
+    background-position: 0px 0px;
+    color: @tagHoverColor;
+  }
+
+
+  /* - Stav: Radek programove tabulky s predstavenim, ktere uz zacalo nebo skoncilo - */
+
+  .prg_row.s_show_finished .hall_icon,
+  .prg_row.s_show_finished .param_icon   {
+    .opacity(.5);
+  }
+
+  .prg_row.s_show_finished .reservation_icon {
+    background-position: 0px -52px;
+    text-align: center;
+    text-indent: 6px;
+    color: @tagDisabledColorFallback;
+    color: @tagDisabledColor;
+  }
+
+  .prg_row.s_show_finished:hover .reservation_icon {
+    color: @tagDisabledColorFallback;
+    color: @tagDisabledColor;
+  }
+
+  /* - Stav: Zobrazujeme jen radky s malym sal nebo velkym salem -
+     Napr. klikanim na filtry podle salu v kategoriich
+  */
+
+  .prg_table.s_small_hall_only .prg_row.big_hall {
+    display: none;
+  }
+
+  .prg_table.s_big_hall_only .prg_row.small_hall {
+    display: none;
+  }
+
+  .prg_table.s_small_hall_only .col_hall,
+  .prg_table.s_big_hall_only .col_hall {
+    display: none;
+  }
+
+  .prg_table.s_small_hall_only .col_time_reservation,
+  .prg_table.s_big_hall_only .col_time_reservation {
+    padding-left: 5px;
+  }
+
+
+  /* - Stav: Radek programove tabulky s predstavenim v ramci cyklu - */
+
+  .prg_row.s_with_cycle .col_cycle {
+  background-color: transparent;
+  }
+
+  .prg_row.s_with_cycle:hover .col_cycle,
+  .prg_row.s_with_cycle:focus .col_cycle,
+  .prg_row.s_with_cycle:active .col_cycle  {
+    background-position: 0px -34px!important;
+  }

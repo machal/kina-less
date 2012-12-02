@@ -1,0 +1,210 @@
+// Utility.less
+// Globalni pomocne tridy
+// ---------------------
+
+/* Helpery */
+.clear {
+  clear: both;
+}
+
+.clear_zero {
+	display: block;
+  clear: both;
+  font-size: 1px;
+  line-height: 1px;
+}
+
+.clearfix {
+  *zoom: 1;
+
+  &:before, &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+.suppress {
+  .opacity(.66);
+}
+
+.fade50 {
+  .opacity(.5);
+}
+
+/* Prvek, ktery se nezobrazuje mimo jednoducha zarizeni
+   (napr. nadpisy pro asistivni technologie)
+*/
+.dumb_only {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+// --- Wrappery obsahu ---
+
+// Obvykle margin neni vhodny kvuli pozadi
+.wrapper {
+  padding: 27px;
+}
+
+p.wrapper {
+  padding-bottom: 10px;
+}
+
+// Ale nekde se zase hodi, aby sousedici wrappery nescitaly odsazeni,
+// takze pouzijeme margin
+.margin_wrapper {
+	margin: 27px;
+}
+
+
+/* Prvek, ktery v HTML zobrazuje stav nacitani */
+
+.loading  {
+  z-index: 100;
+  display: none;
+  text-indent: -5000px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  background: url('../img/loading_white.png?10') no-repeat;
+  .background-size(contain);
+  -webkit-animation: rotate .75s infinite linear; /* Saf5, Chrome */
+  -moz-animation: rotate .75s infinite linear; /* FF5+ */
+  -ms-animation: rotate .75s infinite linear; /* IE10pp3 */
+}
+
+.loading marquee {
+  display: none;
+}
+
+.no-backgroundsize .loading {
+  text-indent: 0;
+  background-image: none !important;
+}
+
+.no-backgroundsize .loading marquee  {
+  display: block;
+}
+
+.s_loading .loading {
+  display: block;
+}
+
+
+// Blok, do ktereho se centruje indikator nacitani - napr. u ajax strankovani v programu
+.loading_block {
+  padding: .5*@baseLineHeight 0 3*@baseLineHeight;
+}
+
+.loading_block .loading {
+  position: static;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+/* --- Webfonty --- */
+
+#container .f_custom {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+// --- Blokovy odkaz ---
+// (napr. v dlazdicich na uvodni strance nebo v Partnerech)
+
+.block_anchor {
+  color: @bodyColor;
+  font-weight: normal;
+
+	// Nadpis v blokovem odkazu
+	.head {
+	  color: @linkColor;
+		font-weight: normal;
+	  text-decoration: none;
+	}
+
+	// "Odkaz" v blokovem odkazu
+	.anchor {
+	  color: @linkColor;
+	  font-weight: bold;
+	  text-decoration: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+	  text-decoration: none;
+	}
+
+} // .block_anchor
+
+
+/* --- Utilitky ---- */
+.l_centered {
+  text-align: center;
+}
+
+.remove_bottom {
+  border-bottom: 0!important;
+  margin-bottom: 0;
+}
+
+.text_large {
+    font-size: 33px;
+    line-height: 40px;
+
+    a {
+      font-weight: 400;
+    }
+}
+
+p.text_large {
+  margin-bottom: 9px;
+}
+
+
+.message {
+  z-index: 500;
+  background: #000;
+  color: #fff;
+  padding: 7px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  text-align: center;
+}
+
+hr.divider {
+  border-top: 1px solid #999;
+}
+
+hr.block {
+  border: 0;
+  background: @white;
+  height: 3px;
+  margin: @baseLineHeight 0 @baseLineHeight/2 0;
+}
+
+// Prazdna plocha namisto nepritomneho obrazku
+.subst_image {
+  display: block;
+  min-height: @baseLineHeight;
+  background: @substImageBgFallback;
+  background: @substImageBg;
+}
+
+// Umele zalomeni radku
+b.br {
+  display: block;
+}

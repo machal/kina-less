@@ -1,0 +1,117 @@
+//
+// Contact
+// Stránka kontakt s ikonkovou navigaci
+// -------------------------------
+
+#contacts {
+  position: relative;
+  min-height: 550px;
+  padding-bottom: 80px;
+  background-color: @contentBgFallback;
+  background-color: @contentBg;
+
+  h2 {
+    display: none;
+  }
+
+  .text_large {
+    padding-top: 7px;
+
+    + .text_large {
+      padding-top: 27px;
+    }
+  }
+}
+
+.gmap {
+  margin-bottom: @baseLineHeight * 2;
+}
+
+.nav_contacts {
+  padding: 80px 0 95px;
+  margin: 0 auto;
+  width: 410px;
+
+  .tab {
+    .at2x('../img/contact_icons_white.png?2', 398px, 90px);
+    background-position: 0 0;
+    width: 60px;
+    height: 68px;
+    padding: 0;
+    margin: 0 10px;
+
+    .opacity(.5);
+
+    &:hover {
+      .opacity(1);
+
+      .tab_header {
+        display: block;
+      }
+    }
+
+    &:hover .icon_tip {
+      display: block;
+    }
+  }
+
+  .icon_tip {
+    display: none;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: "";
+
+      top: 48px;
+      left: 24px;
+      width: 12px;
+      height: 20px;
+
+      .at2x('../img/contact_icons_white.png?2', 398px, 90px);
+      background-position: 0 -64px;
+    }
+  }
+
+  .tab_header {
+    top: 19px;
+    left: 0;
+    width: 766px;
+
+    font-size: 33px;
+    line-height: 45px;
+    text-align: center;
+  }
+
+
+  .active {
+    .tab {
+      .opacity(1);
+
+      .icon_tip {
+        display: block;
+      }
+    }
+  }
+
+  .icon_map {
+    background-position: 0 0;
+  }
+
+  .icon_ticket_office {
+    background-position: -85px 0;
+  }
+
+  .icon_bar {
+    background-position: -169px 0;
+  }
+
+  .icon_directions {
+    background-position: -254px 0;
+  }
+
+  .icon_phone {
+    background-position: -338px 0;
+  }
+
+}

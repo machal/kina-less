@@ -1,0 +1,233 @@
+.prg_table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+.prg_table td {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+
+  height: 37px;
+  /* 37px */
+
+  padding: 4px 0 0 0;
+  border: 0;
+  margin: 0;
+  vertical-align: top;
+  background-color: transparent;
+  -webkit-background-size: 41px auto;
+  /* Saf3-4 */
+
+  -moz-background-size: 41px auto;
+  /* FF3.6 */
+
+  background-size: 41px auto;
+  /* Opera, IE9, Saf5, Chrome, FF4 */
+
+}
+.no-backgroundsize .prg_table td {
+  background-image: none;
+}
+.prg_table acronym {
+  border: none;
+}
+/* Ikonka salu (prvni sloupec ve velke tabulce)
+     - jen pro vicesalova kina jako Svetozor
+  */
+/* TODO az bude vyreseno programatorsky, smaznout */
+.prg_table .col_hall {
+  display: none;
+}
+.prg_table.multiple_halls .col_hall {
+  width: 37px;
+  display: table-cell;
+}
+.prg_table .hall_icon {
+  text-indent: -5000px;
+  display: inline-block;
+  margin: 0 0 0 5px;
+  width: 33px;
+  height: 26px;
+
+  .at2x('../img/prg_table_hall_white.png?1', 100%, auto);
+  background-repeat: no-repeat;
+
+  .opacity(.5);
+}
+.prg_table .hall_icon.big_hall {
+  background-position: 0px -26px;
+}
+
+/* Cas a ikonka rezervace (druhy sloupec ve velke) */
+.prg_table .col_time_reservation {
+  width: 68px;
+  padding-left: 5px;
+}
+.prg_table.multiple_halls .col_time_reservation {
+  width: 68px;
+  padding-left: 0;
+}
+.prg_table .reservation_icon {
+  display: block;
+  width: 55px;
+  /* 68 */
+
+  text-align: right;
+  padding-right: 13px;
+  height: 26px;
+  line-height: 26px;
+  color: #fff;
+  -webkit-background-size: 100% auto;
+  /* Saf3-4 */
+
+  -moz-background-size: 100% auto;
+  /* FF3.6 */
+
+  background-size: 100% auto;
+  /* Opera, IE9, Saf5, Chrome, FF4 */
+
+  background-position: 0px -26px;
+}
+.no-backgroundsize .prg_table .reservation_icon {
+  background-image: none;
+  padding: 0;
+  text-align: center;
+  line-height: 26px;
+  text-indent: 0;
+  background: #e2001a;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+.prg_table .reservation_icon:hover,
+.prg_table .reservation_icon:focus,
+.prg_table .reservation_icon:active {
+  text-decoration: none;
+}
+/* Sloupec s nazvem filmu a doplnujici vetou */
+.prg_table .col_movie_name {
+  width: 545px;
+  color: #fff;
+}
+.prg_table.multiple_halls .col_movie_name {
+  width: 508px;
+  /* Ve vicesalovych kinech je kratsi o delku .col_hall - 5px co je navic v .col_time_reservation */
+
+}
+.prg_table .name_and_sentence {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 490px;
+}
+.prg_table .name {
+  margin: 4px 0 0 13px;
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+}
+.prg_table .name:hover,
+.prg_table .name:focus,
+.prg_table .name:active {
+  text-decoration: none;
+}
+.prg_table .sentence {
+  position: relative;
+  top: -2px;
+  left: 6px;
+  font-size: 12px;
+  display: inline-block;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+/* Sloupec s ikonami */.prg_table .param_icon {
+  text-indent: -5000px;
+  margin-right: 4px;
+  display: inline-block;
+  font-size: 11px;
+  width: 26px;
+  height: 26px;
+  background-image: url('../img/prg_table_param_icons.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 52px auto;
+  /* Saf3-4 */
+
+  -moz-background-size: 52px auto;
+  /* FF3.6 */
+
+  background-size: 52px auto;
+  /* Opera, IE9, Saf5, Chrome, FF4 */
+
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+.prg_table .param_icon.eng_friendly {
+  background-position: 0 0;
+}
+.prg_table .param_icon.hd {
+  background-position: 0 -26px;
+}
+.prg_table .param_icon.dvd {
+  background-position: 0 -51px;
+}
+.prg_table .param_icon.celluloid {
+  background-position: 0 -78px;
+}
+.prg_table .param_icon.4k {
+  background-position: 0 -104px;
+}
+.no-backgroundsize .prg_table .param_icon {
+  background-image: none;
+  text-indent: 0;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+/* Sloupec s pristupnosti */.age_icon {
+  text-indent: -5000px;
+  display: inline-block;
+  font-size: 11px;
+  width: 35px;
+  height: 26px;
+  background-image: url('../img/age_icons.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 70px auto;
+  /* Saf3-4 */
+
+  -moz-background-size: 70px auto;
+  /* FF3.6 */
+
+  background-size: 70px auto;
+  /* Opera, IE9, Saf5, Chrome, FF4 */
+
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+.age_icon.age12 {
+  background-position: 0 0;
+}
+.age_icon.age15 {
+  background-position: 0 -26px;
+}
+.age_icon.age18 {
+  background-position: 0 -52px;
+}
+.no-backgroundsize .age_icon {
+  background-image: none;
+  text-indent: 0;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+.prg_table .col_text {
+  padding: 8px 5px 0 9px;
+}

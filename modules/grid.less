@@ -1,0 +1,22 @@
+//
+// GRID
+// Pravidelna mrizka
+// --------------------------------------------------
+
+.grid {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 5px;
+  margin: -5px; // korekce okraje containeru pro border spacing
+}
+
+// Pokud je v mrizce vic jak jeden radek
+.row {
+  display: table-row;
+}
+
+// 3 sloupce
+.cell3 {
+  display: table-cell;
+  width: 100% / 3;
+}

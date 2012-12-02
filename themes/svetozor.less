@@ -1,0 +1,201 @@
+//   D) Vyjimky pro Svetozor
+
+// --- Typografie - Vafle Classic ---
+
+// Suitcase varianta (nepouzivame)
+@font-face {
+  font-family: 'Vafle_Classic';
+  src: url('fonts/Vafle_Classic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Vafle_Classic.woff') format('woff'),
+       url('fonts/Vafle_Classic.svg') format('svg'),
+       local('☺');
+}
+
+// Font Squirrel varianta
+@font-face {
+  font-family: 'VafleClassicRegular';
+  src: url('fonts/vafle_classic-webfont.eot');
+  src: url('fonts/vafle_classic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/vafle_classic-webfont.woff') format('woff');
+}
+
+
+body .f_custom {
+  font-family: 'VafleClassicRegular', sans-serif;
+  font-weight: normal !important;
+  font-style: normal !important;
+
+  a {
+    font-weight: normal !important;
+  }
+}
+
+
+// ==============================================================================
+// B) Tiskove styly
+
+@media print {
+
+
+} // @media print
+
+
+
+// ==============================================================================
+// C) Obrazovkove styly
+
+@media screen {
+
+
+  // --- Fotka na pozadi stranky ---
+
+  body {
+    background-color: #000;
+    background-image: url('../img/svetozor/body_bg.jpg?2');
+    background-repeat: repeat-x;
+    background-position: top left;
+    background-attachment: fixed;
+
+		.no-backgroundsize & {
+			background-image: none;
+		}
+  }
+
+  // --- Barvy ---
+
+  hr.divider {
+    border-color: #eee;
+  }
+
+
+  // --- Navigace ---
+
+  // Svetozor ma hvezdicku posunutou doleva
+
+  #logo {
+    left: 15px;
+  }
+
+  #nav {
+    top: 162px;
+  }
+
+  .nav_lang a {
+    background: fade(@linkColor, 25%);
+  }
+
+  // .rgba #nav .item {
+  //   color: darken(@navBaseColor, 12%);
+  // }
+
+  // .rgba #nav .nav_main .item,
+  // .rgba #nav .nav_secondary .item {
+  //   color: darken(@navMainColor, 7%);
+  // }
+
+
+  // --- Programova tabulka ---
+
+  // Predstaveni jiz probehlo
+  .prg_table .s_show_finished {
+    .name_and_sentence   {
+        .opacity(.25);
+    }
+  }
+
+  // --- Modul Tabs - bila aktivni ---
+  .tabs_alt {
+    border-bottom: 3px solid @white;
+    margin-bottom: 3px;
+  }
+
+  .tabs_alt a.current,
+  .tabs_alt a.current:active,
+  .tabs_alt a.current:hover {
+    background: @white;
+    color: @black;
+  }
+
+  // --- Maly program ---
+  .prg_widget td {
+    color: @black;
+  }
+  .prg_table.prg_widget .price_anchor {
+    color: @black;
+  }
+
+  // Modul Filtry
+
+  .tabs_pills > .active > a,
+  .tabs_pills > .active > a:hover {
+  background: @white;
+  color: @black;
+  }
+
+
+  // --- Modul: Filtry (rozsiruje .tabs) ---
+  .hall_filter {
+    position: absolute;
+    right: 0;
+    top: 2px;
+    border-bottom: 0;
+
+    .active {
+      position: relative;
+
+      &:before {
+        border-color: #FFFFFF transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #FFFFFF;
+        bottom: -4px;
+        content: "";
+        height: 0;
+        left: 50%;
+        margin-left: -6px;
+        position: absolute;
+        width: 0;
+      }
+    }
+  }
+
+  .fancybox_white {
+    h2 {
+      color: @ftb_color;
+      padding: 20px 20px 15px;
+      margin-bottom: 40px;
+      border-bottom: 3px solid @ftb_border_color;
+    }
+    form {
+      padding: 0 20px;
+    }
+  }
+
+  .icon_facebook {
+    .opacity(.5);
+  }
+
+  .item:hover .icon_facebook {
+    .opacity(1);
+  }
+
+  .products_text,
+  .products_link:focus,
+  .products_link:active,
+  .products_link:visited {
+    color: #87928f;
+  }
+
+} // @media screen
+
+// ==============================================================================
+// E) Obrazky ve dvou rozlisenich
+// - Obrazky je nutne nacitat mimo media query, protoze mixin at2x pouziva media query s pixel-density
+
+
+.prg_widget .param_icon {
+  .at2x('../img/prg_table_param_icons_dark.png?2', 100%, auto);
+}
+.prg_widget .param_icon.no_subtitles {
+  .at2x('../img/prg_table_param_orig_dark.png?1', 100%, auto);
+}
